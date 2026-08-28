@@ -4,6 +4,7 @@ import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 import org.jetbrains.kotlin.gradle.tasks.KotlinJvmCompile
 
 buildscript {
+
     repositories {
         google()
         mavenCentral()
@@ -17,19 +18,25 @@ buildscript {
     }
 }
 
+
 allprojects {
+
     repositories {
         google()
         mavenCentral()
         maven("https://jitpack.io")
+        maven("https://raw.githubusercontent.com/recloudstream/cloudstream/master/repo")
     }
 }
+
 
 fun Project.cloudstream(configuration: CloudstreamExtension.() -> Unit) =
     extensions.getByName<CloudstreamExtension>("cloudstream").configuration()
 
+
 fun Project.android(configuration: BaseExtension.() -> Unit) =
     extensions.getByName<BaseExtension>("android").configuration()
+
 
 
 subprojects {
@@ -40,6 +47,7 @@ subprojects {
 
 
     cloudstream {
+
         setRepo(
             System.getenv("GITHUB_REPOSITORY")
                 ?: "https://github.com/SafakStream/SafakStream"
@@ -53,13 +61,16 @@ subprojects {
 
         compileSdkVersion(35)
 
+
         defaultConfig {
+
             minSdk = 21
             targetSdk = 35
         }
 
 
         compileOptions {
+
             sourceCompatibility = JavaVersion.VERSION_17
             targetCompatibility = JavaVersion.VERSION_17
         }
@@ -81,13 +92,14 @@ subprojects {
     }
 
 
+
     dependencies {
 
         val implementation by configurations
 
 
         implementation(
-            "com.github.recloudstream.cloudstream:library:-SNAPSHOT"
+            "com.github.recloudstream:cloudstream:master-SNAPSHOT"
         )
 
 
@@ -114,14 +126,15 @@ subprojects {
         )
 
 
-        // Kekik eklentileri için gerekli
         implementation(
-            "com.github.Kekik:CloudflareKiller:master-SNAPSHOT"
+            "com.github.keyiflerolsun:CloudflareKiller:master-SNAPSHOT"
         )
     }
 }
 
 
+
 task<Delete>("clean") {
+
     delete(rootProject.layout.buildDirectory)
 }
