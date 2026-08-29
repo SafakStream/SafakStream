@@ -21,43 +21,43 @@ class SetFilmIzle : MainAPI() {
     override val supportedTypes       = setOf(TvType.Movie, TvType.TvSeries)
 
     override val mainPage = mainPageOf(
-        "${mainUrl}/tur/aile/"        to "Aile",
-        "${mainUrl}/tur/aksiyon/"     to "Aksiyon",
-        "${mainUrl}/tur/animasyon/"   to "Animasyon",
-        "${mainUrl}/tur/belgesel/"    to "Belgesel",
-        "${mainUrl}/tur/bilim-kurgu/" to "Bilim-Kurgu",
-        "${mainUrl}/tur/biyografi/"   to "Biyografi",
-        "${mainUrl}/tur/dini/"        to "Dini",
-        "${mainUrl}/tur/dram/"        to "Dram",
-        "${mainUrl}/tur/fantastik/"   to "Fantastik",
-        "${mainUrl}/tur/genclik/"     to "Gençlik",
-        "${mainUrl}/tur/gerilim/"     to "Gerilim",
-        "${mainUrl}/tur/gizem/"       to "Gizem",
-        "${mainUrl}/tur/komedi/"      to "Komedi",
-        "${mainUrl}/tur/korku/"       to "Korku",
-        "${mainUrl}/tur/macera/"      to "Macera",
-        "${mainUrl}/tur/mini-dizi/"   to "Mini Dizi",
-        "${mainUrl}/tur/muzik/"       to "Müzik",
-        "${mainUrl}/tur/program/"     to "Program",
-        "${mainUrl}/tur/romantik/"    to "Romantik",
-        "${mainUrl}/tur/savas/"       to "Savaş",
-        "${mainUrl}/tur/spor/"        to "Spor",
-        "${mainUrl}/tur/suc/"         to "Suç",
-        "${mainUrl}/tur/tarih/"       to "Tarih",
-        "${mainUrl}/tur/western/"     to "Western"
+        "${mainUrl}/film-izle/"        to "Son Eklenen Filmler",
+        "${mainUrl}/dizi-izle/"        to "Son Eklenen Diziler",
+        "${mainUrl}/tur/aksiyon/"      to "Aksiyon",
+        "${mainUrl}/tur/bilim-kurgu/"  to "Bilim-Kurgu",
+        "${mainUrl}/tur/komedi/"       to "Komedi",
+        "${mainUrl}/tur/korku/"        to "Korku",
+        "${mainUrl}/tur/gerilim/"      to "Gerilim",
+        "${mainUrl}/tur/dram/"         to "Dram",
+        "${mainUrl}/tur/animasyon/"    to "Animasyon",
+        "${mainUrl}/tur/belgesel/"     to "Belgesel"
     )
 
     override suspend fun getMainPage(page: Int, request: MainPageRequest): HomePageResponse {
-        val document = app.get(request.data).document
-        val home     = document.select("div.items article").mapNotNull { it.toMainPageResult() }
+        val url = if (page <= 1) request.data else "${request.data}page/$page/"
+        val document = app.get(url).document
+        val home = document.select("div.items article, div.poster-media, div.item, article.item").mapNotNull { it.toMainPageResult() }
 
-        return newHomePageResponse(request.name, home)
+        return newHomePageResponse(
+            list = HomePageList(
+                name = request.name,
+                list = home,
+                isHorizontalImages = false
+            ),
+            hasNext = home.isNotEmpty()
+        )
     }
 
     private fun Element.toMainPageResult(): SearchResponse? {
-        val title     = this.selectFirst("h2")?.text() ?: return null
-        val href      = fixUrlNull(this.selectFirst("a")?.attr("href")) ?: return null
-        val posterUrl = fixUrlNull(this.selectFirst("img")?.attr("data-src"))
+        val title = this.selectFirst("h2, h3, .entry-title, .title, img")?.text()?.ifEmpty { null }
+            ?: this.selectFirst("img")?.attr("alt")?.ifEmpty { null }
+            ?: return null
+        val href = fixUrlNull(this.selectFirst("a")?.attr("href")) ?: return null
+        val posterUrl = fixUrlNull(
+            this.selectFirst("img")?.attr("data-src")
+                ?: this.selectFirst("img")?.attr("data-lazy-src")
+                ?: this.selectFirst("img")?.attr("src")
+        )
 
         return if (href.contains("/dizi/")) {
             newTvSeriesSearchResponse(title, href, TvType.TvSeries) { this.posterUrl = posterUrl }
@@ -67,32 +67,28 @@ class SetFilmIzle : MainAPI() {
     }
 
     override suspend fun search(query: String): List<SearchResponse> {
-        val mainPage = app.get(mainUrl).document
-        val nonce    = Regex("""nonce: '(.*)'""").find(mainPage.html())?.groupValues?.get(1) ?: ""
-        val search   = app.post(
-            url     = "${mainUrl}/wp-admin/admin-ajax.php",
-            headers = mapOf("X-Requested-With" to "XMLHttpRequest"),
-            data    = mapOf(
-                "action" to "ajax_search",
-                "nonce"  to nonce,
-                "search" to query
+        return try {
+            val mainPage = app.get(mainUrl).document
+            val nonce = Regex("""nonce: '(.*)'""").find(mainPage.html())?.groupValues?.get(1) ?: ""
+            val search = app.post(
+                url = "${mainUrl}/wp-admin/admin-ajax.php",
+                headers = mapOf("X-Requested-With" to "XMLHttpRequest"),
+                data = mapOf(
+                    "action" to "ajax_search",
+                    "nonce"  to nonce,
+                    "search" to query
+                )
             )
-        )
-        val document = Jsoup.parse(JSONObject(search.text).getString("html"))
-
-        return document.select("div.items article").mapNotNull { it.toSearchResult() }
+            val document = Jsoup.parse(JSONObject(search.text).getString("html"))
+            document.select("div.items article, div.poster-media, div.item, article.item").mapNotNull { it.toSearchResult() }
+        } catch (e: Exception) {
+            val doc = app.get("${mainUrl}/?s=${query}").document
+            doc.select("div.items article, div.poster-media, div.item, article.item").mapNotNull { it.toSearchResult() }
+        }
     }
 
     private fun Element.toSearchResult(): SearchResponse? {
-        val title     = this.selectFirst("h2")?.text() ?: return null
-        val href      = fixUrlNull(this.selectFirst("a")?.attr("href")) ?: return null
-        val posterUrl = fixUrlNull(this.selectFirst("img")?.attr("data-src"))
-
-        return if (href.contains("/dizi/")) {
-            newTvSeriesSearchResponse(title, href, TvType.TvSeries) { this.posterUrl = posterUrl }
-        } else {
-            newMovieSearchResponse(title, href, TvType.Movie) { this.posterUrl = posterUrl }
-        }
+        return toMainPageResult()
     }
 
     override suspend fun quickSearch(query: String): List<SearchResponse> = search(query)
@@ -100,40 +96,43 @@ class SetFilmIzle : MainAPI() {
     override suspend fun load(url: String): LoadResponse? {
         val document = app.get(url).document
 
-        val title           = document.selectFirst("h1")?.text()?.substringBefore(" izle")?.trim() ?: return null
-        val poster          = fixUrlNull(document.selectFirst("div.poster img")?.attr("src"))
-        val description     = document.selectFirst("div.wp-content p")?.text()?.trim()
-        var year            = document.selectFirst("div.extra span.C a")?.text()?.trim()?.toIntOrNull()
-        val tags            = document.select("div.sgeneros a").map { it.text() }
-        var duration        = document.selectFirst("span.runtime")?.text()?.split(" ")?.first()?.trim()?.toIntOrNull()
-        val recommendations = document.select("div.srelacionados article").mapNotNull { it.toRecommendationResult() }
-        val actors          = document.select("span.valor a").map { Actor(it.text()) }
-        val trailer         = Regex("""embed/(.*)\?rel""").find(document.html())?.groupValues?.get(1)?.let { "https://www.youtube.com/embed/$it" }
+        val title = document.selectFirst("h1")?.text()?.substringBefore(" izle")?.trim() ?: return null
+        val poster = fixUrlNull(
+            document.selectFirst("div.poster img, .poster img")?.attr("data-src")
+                ?: document.selectFirst("div.poster img, .poster img")?.attr("src")
+        )
+        val description = document.selectFirst("div.wp-content p, #info .content p")?.text()?.trim()
+        var year = document.selectFirst("div.extra span.C a, span.date")?.text()?.trim()?.toIntOrNull()
+        val tags = document.select("div.sgeneros a, .genres a").map { it.text() }
+        var duration = document.selectFirst("span.runtime")?.text()?.split(" ")?.first()?.trim()?.toIntOrNull()
+        val recommendations = document.select("div.srelacionados article, .related-posts article").mapNotNull { it.toMainPageResult() }
+        val actors = document.select("span.valor a, .cast a").map { Actor(it.text()) }
+        val trailer = Regex("""embed/(.*)\?rel""").find(document.html())?.groupValues?.get(1)?.let { "https://www.youtube.com/embed/$it" }
 
         if (url.contains("/dizi/")) {
-            year     = document.selectFirst("a[href*='/yil/']")?.text()?.trim()?.toIntOrNull()
+            year = document.selectFirst("a[href*='/yil/']")?.text()?.trim()?.toIntOrNull()
             duration = document.selectFirst("div#info span:containsOwn(Dakika)")?.text()?.split(" ")?.first()?.trim()?.toIntOrNull()
 
-            val episodes = document.select("div#episodes ul.episodios li").mapNotNull {
-                val epHref    = fixUrlNull(it.selectFirst("h4.episodiotitle a")?.attr("href")) ?: return@mapNotNull null
-                val epName    = it.selectFirst("h4.episodiotitle a")?.ownText()?.trim() ?: return@mapNotNull null
-                val epDetail  = it.selectFirst("h4.episodiotitle a")?.ownText()?.trim() ?: return@mapNotNull null
-                val epSeason  = epDetail.substringBefore(". Sezon").toIntOrNull()
-                val epEpisode = epDetail.split("Sezon ").last().substringBefore(". Bölüm").toIntOrNull()
+            val episodes = document.select("div#episodes ul.episodios li, ul.episodios li").mapNotNull {
+                val epHref = fixUrlNull(it.selectFirst("h4.episodiotitle a, a")?.attr("href")) ?: return@mapNotNull null
+                val epName = it.selectFirst("h4.episodiotitle a, a")?.ownText()?.trim() ?: "Bölüm"
+                val epDetail = it.selectFirst("h4.episodiotitle a, a")?.text()?.trim() ?: ""
+                val epSeason = epDetail.substringBefore(". Sezon").toIntOrNull()
+                val epEpisode = epDetail.split("Sezon ").lastOrNull()?.substringBefore(". Bölüm")?.toIntOrNull()
 
                 newEpisode(epHref) {
-                    this.name    = epName
-                    this.season  = epSeason
+                    this.name = epName
+                    this.season = epSeason
                     this.episode = epEpisode
                 }
             }
 
             return newTvSeriesLoadResponse(title, url, TvType.TvSeries, episodes) {
-                this.posterUrl       = poster
-                this.plot            = description
-                this.year            = year
-                this.tags            = tags
-                this.duration        = duration
+                this.posterUrl = poster
+                this.plot = description
+                this.year = year
+                this.tags = tags
+                this.duration = duration
                 this.recommendations = recommendations
                 addActors(actors)
                 addTrailer(trailer)
@@ -141,36 +140,24 @@ class SetFilmIzle : MainAPI() {
         }
 
         return newMovieLoadResponse(title, url, TvType.Movie, url) {
-            this.posterUrl       = poster
-            this.plot            = description
-            this.year            = year
-            this.tags            = tags
-            this.duration        = duration
+            this.posterUrl = poster
+            this.plot = description
+            this.year = year
+            this.tags = tags
+            this.duration = duration
             this.recommendations = recommendations
             addActors(actors)
             addTrailer(trailer)
         }
     }
 
-    private fun Element.toRecommendationResult(): SearchResponse? {
-        val title     = this.selectFirst("a img")?.attr("alt") ?: return null
-        val href      = fixUrlNull(this.selectFirst("a")?.attr("href")) ?: return null
-        val posterUrl = fixUrlNull(this.selectFirst("a img")?.attr("data-src"))
-
-        return if (href.contains("/dizi/")) {
-            newTvSeriesSearchResponse(title, href, TvType.TvSeries) { this.posterUrl = posterUrl }
-        } else {
-            newMovieSearchResponse(title, href, TvType.Movie) { this.posterUrl = posterUrl }
-        }
-    }
-
     private fun sendMultipartRequest(nonce: String, postId: String, playerName: String, partKey: String, referer: String): Response {
         val formData = mapOf(
-            "action"      to "get_video_url",
-            "nonce"       to nonce,
-            "post_id"     to postId,
+            "action" to "get_video_url",
+            "nonce" to nonce,
+            "post_id" to postId,
             "player_name" to playerName,
-            "part_key"    to partKey
+            "part_key" to partKey
         )
 
         val requestBody = MultipartBody.Builder().setType(MultipartBody.FORM).apply {
@@ -178,7 +165,7 @@ class SetFilmIzle : MainAPI() {
         }.build()
 
         val headers = mapOf(
-            "Referer"          to referer,
+            "Referer" to referer,
             "X-Requested-With" to "XMLHttpRequest"
         )
 
@@ -187,7 +174,6 @@ class SetFilmIzle : MainAPI() {
         }.build()
 
         val client = OkHttpClient()
-
         return client.newCall(request).execute()
     }
 
@@ -200,30 +186,33 @@ class SetFilmIzle : MainAPI() {
         Log.d("STF", "data » $data")
         val document = app.get(data).document
 
-        document.select("nav.player a").map { element ->
-            val sourceId = element.attr("data-post-id")
-            val name = element.attr("data-player-name")
+        document.select("nav.player a, ul.options a").map { element ->
+            val sourceId = element.attr("data-post-id").ifEmpty { element.attr("data-post") }
+            val name = element.attr("data-player-name").ifEmpty { element.attr("data-name") }
             val partKey = element.attr("data-part-key").takeIf { it.isNotEmpty() }
 
             Triple(name, sourceId, partKey)
         }.forEach { (name, sourceId, partKey) ->
-            if (sourceId.contains("event")) return@forEach
-            if (sourceId == "") return@forEach
+            if (sourceId.contains("event") || sourceId.isEmpty()) return@forEach
 
-            val nonce = document.selectFirst("div#playex")?.attr("data-nonce") ?: ""
-            val multiPart = sendMultipartRequest(nonce, sourceId, name, partKey ?: "", data)
-            val sourceBody = multiPart.body.string()
-            val sourceIframe = JSONObject(sourceBody).optJSONObject("data")?.optString("url") ?: return@forEach
+            val nonce = document.selectFirst("div#playex, div#player")?.attr("data-nonce") ?: ""
+            try {
+                val multiPart = sendMultipartRequest(nonce, sourceId, name, partKey ?: "", data)
+                val sourceBody = multiPart.body.string()
+                val sourceIframe = JSONObject(sourceBody).optJSONObject("data")?.optString("url") ?: return@forEach
 
-            Log.d("STF", "iframe » $sourceIframe")
+                Log.d("STF", "iframe » $sourceIframe")
 
-            val finalUrl = if (sourceIframe.contains("setplay")) {
-                sourceIframe
-            } else {
-                if (partKey != null) "$sourceIframe?partKey=$partKey" else sourceIframe
+                val finalUrl = if (sourceIframe.contains("setplay")) {
+                    sourceIframe
+                } else {
+                    if (partKey != null) "$sourceIframe?partKey=$partKey" else sourceIframe
+                }
+
+                loadExtractor(finalUrl, "$mainUrl/", subtitleCallback, callback)
+            } catch (e: Exception) {
+                Log.e("STF", "Error loading player: ${e.message}")
             }
-
-            loadExtractor(finalUrl, "$mainUrl/", subtitleCallback, callback)
         }
 
         return true
