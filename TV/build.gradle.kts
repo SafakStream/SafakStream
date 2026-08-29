@@ -5,15 +5,15 @@ cloudstream {
     // All of these properties are optional, you can safely remove them
 
     description = "Live streams from the Free TV github repository. Forked from the Free-TV plugin in the ItalianProvider repo"
-    authors = listOf("Gian-Fr","Adippe","doGior")
+    authors = listOf("Gian-Fr", "Adippe", "doGior")
 
     /**
-    * Status int as the following:
-    * 0: Down
-    * 1: Ok
-    * 2: Slow
-    * 3: Beta only
-    * */
+     * Status int as the following:
+     * 0: Down
+     * 1: Ok
+     * 2: Slow
+     * 3: Beta only
+     * */
     status = 1
 
     tvTypes = listOf("Live")
@@ -24,6 +24,8 @@ cloudstream {
 }
 
 android {
+    namespace = "it.dogior.hadEnough"
+
     buildFeatures {
         buildConfig = true
         viewBinding = true
@@ -31,5 +33,7 @@ android {
 }
 
 dependencies {
+    implementation("androidx.appcompat:appcompat:1.6.1")
+    implementation("androidx.core:core-ktx:1.12.0")
     implementation("com.google.android.material:material:1.12.0")
 }
