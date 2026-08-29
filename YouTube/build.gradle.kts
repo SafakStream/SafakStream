@@ -22,6 +22,8 @@ cloudstream {
 }
 
 android {
+    namespace = "it.dogior.hadEnough"
+
     buildFeatures {
         buildConfig = true
         viewBinding = true
