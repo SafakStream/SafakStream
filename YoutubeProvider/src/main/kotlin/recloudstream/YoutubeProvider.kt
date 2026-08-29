@@ -73,7 +73,7 @@ class YoutubeProvider : MainAPI() {
             return newHomePageResponse(emptyList(), false)
         }
 
-        val results = pageData.getItems().map { item ->
+        val results = pageData.getItems().map { item: InfoItem ->
             item.toSearchResponse()
         }
 
@@ -129,7 +129,7 @@ class YoutubeProvider : MainAPI() {
             return newSearchResponseList(emptyList(), false)
         }
 
-        val results = pageData.getItems().map { item ->
+        val results = pageData.getItems().map { item: InfoItem ->
             item.toSearchResponse()
         }
 
@@ -250,8 +250,8 @@ class YoutubeProvider : MainAPI() {
         var page = videosExtractor.getInitialPage()
 
         episodes.addAll(
-            page.getItems().map { item ->
-                newEpisode(item.getUrl()) {
+            page.getItems().map { item: InfoItem ->
+                newEpisode(item.getUrl(), fix = true) {
                     name = item.getName()
                     posterUrl = item.getThumbnails().lastOrNull()?.url
                 }
@@ -268,8 +268,8 @@ class YoutubeProvider : MainAPI() {
             page = videosExtractor.getPage(page.getNextPage())
 
             episodes.addAll(
-                page.getItems().map { item ->
-                    newEpisode(item.getUrl()) {
+                page.getItems().map { item: InfoItem ->
+                    newEpisode(item.getUrl(), fix = true) {
                         name = item.getName()
                         posterUrl = item.getThumbnails().lastOrNull()?.url
                     }
@@ -314,8 +314,8 @@ class YoutubeProvider : MainAPI() {
         var page = extractor.getInitialPage()
 
         episodes.addAll(
-            page.getItems().map { item ->
-                newEpisode(item.getUrl()) {
+            page.getItems().map { item: InfoItem ->
+                newEpisode(item.getUrl(), fix = true) {
                     name = item.getName()
                     posterUrl = item.getThumbnails().lastOrNull()?.url
                 }
@@ -329,8 +329,8 @@ class YoutubeProvider : MainAPI() {
             page = extractor.getPage(page.getNextPage())
 
             episodes.addAll(
-                page.getItems().map { item ->
-                    newEpisode(item.getUrl()) {
+                page.getItems().map { item: InfoItem ->
+                    newEpisode(item.getUrl(), fix = true) {
                         name = item.getName()
                         posterUrl = item.getThumbnails().lastOrNull()?.url
                     }
