@@ -98,9 +98,9 @@ subprojects {
         val implementation by configurations
 
 
-        implementation(
-            "com.github.recloudstream:cloudstream:master-SNAPSHOT"
-        )
+implementation(
+    "com.github.recloudstream.cloudstream:library:-SNAPSHOT"
+)
 
 
         implementation(kotlin("stdlib"))
