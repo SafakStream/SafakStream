@@ -16,11 +16,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="14dp"
-            android:text="Watch Party"
+            android:text="Birlikte İzle (Watch Party)"
             android:textSize="24sp"
             android:textStyle="bold" />
 
-        <!-- Card: stato connessione + partecipanti -->
+        <!-- Card: bağlantı durumu + katılımcılar -->
         <LinearLayout
             android:id="@+id/wp_status_card"
             android:layout_width="match_parent"
@@ -46,7 +46,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Open a video, then create a room or join with a PIN."
+                    android:text="Bir video açın, ardından oda oluşturun veya bir PIN ile katılın."
                     android:textSize="13sp" />
 
             </LinearLayout>
@@ -61,7 +61,7 @@
 
         </LinearLayout>
 
-        <!-- Card: PIN + copia (solo host) -->
+        <!-- Card: PIN + kopyala (sadece kurucu) -->
         <LinearLayout
             android:id="@+id/wp_pin_card"
             android:layout_width="match_parent"
@@ -87,12 +87,12 @@
                 android:layout_width="38dp"
                 android:layout_height="38dp"
                 android:layout_marginStart="8dp"
-                android:contentDescription="Copy the PIN"
+                android:contentDescription="PIN Kodunu Kopyala"
                 android:padding="7dp" />
 
         </LinearLayout>
 
-        <!-- Card: crea/unisciti (stato "non in stanza") -->
+        <!-- Card: oluştur/katıl (durum: odada değilken) -->
         <LinearLayout
             android:id="@+id/wp_join_card"
             android:layout_width="match_parent"
@@ -108,7 +108,7 @@
                 android:clickable="true"
                 android:focusable="true"
                 android:gravity="center"
-                android:text="Create room"
+                android:text="Oda Oluştur"
                 android:textAllCaps="false"
                 android:textStyle="bold" />
 
@@ -117,7 +117,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
-                android:hint="Enter the room PIN"
+                android:hint="Oda PIN kodunu girin"
                 android:inputType="number"
                 android:maxLength="6" />
 
@@ -129,13 +129,13 @@
                 android:clickable="true"
                 android:focusable="true"
                 android:gravity="center"
-                android:text="Join room"
+                android:text="Odaya Katıl"
                 android:textAllCaps="false"
                 android:textStyle="bold" />
 
         </LinearLayout>
 
-        <!-- Card: azioni stanza attiva -->
+        <!-- Card: aktif oda eylemleri -->
         <LinearLayout
             android:id="@+id/wp_active_room_card"
             android:layout_width="match_parent"
@@ -173,7 +173,7 @@
                     android:clickable="true"
                     android:focusable="true"
                     android:gravity="center"
-                    android:text="Next ep. ▶"
+                    android:text="Sonraki Bölüm ▶"
                     android:textAllCaps="false"
                     android:textSize="14sp"
                     android:textStyle="bold" />
@@ -187,7 +187,7 @@
                 android:clickable="true"
                 android:focusable="true"
                 android:gravity="center"
-                android:text="Resync now"
+                android:text="Şimdi Yeniden Senkronize Et"
                 android:textAllCaps="false"
                 android:textStyle="bold" />
 
@@ -199,13 +199,13 @@
                 android:clickable="true"
                 android:focusable="true"
                 android:gravity="center"
-                android:text="Leave room"
+                android:text="Odadan Ayrıl"
                 android:textAllCaps="false"
                 android:textStyle="bold" />
 
         </LinearLayout>
 
-        <!-- Sezione impostazioni: riga stile StreamITA, apre una pagina dedicata -->
+        <!-- Ayarlar Bölümü -->
         <LinearLayout
             android:id="@+id/wp_settings_card"
             android:layout_width="match_parent"
@@ -227,7 +227,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Settings"
+                    android:text="Ayarlar"
                     android:textSize="17sp"
                     android:textStyle="bold" />
 
@@ -236,7 +236,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
                     android:alpha="0.8"
-                    android:text="Plugin preferences"
+                    android:text="Eklenti tercihleri"
                     android:textSize="13sp" />
             </LinearLayout>
 
@@ -244,7 +244,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="12dp"
-                android:text="Open"
+                android:text="Aç"
                 android:textStyle="bold" />
 
         </LinearLayout>
