@@ -4,10 +4,9 @@ import android.app.AlertDialog
 import android.content.Context
 import android.content.ContextWrapper
 import android.content.SharedPreferences
-import android.widget.LinearLayout
-import android.widget.TextView
-import android.widget.EditText
+import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.SwitchCompat
 import com.lagradost.cloudstream3.plugins.CloudstreamPlugin
 import com.lagradost.cloudstream3.plugins.Plugin
 import org.schabi.newpipe.extractor.NewPipe
@@ -48,23 +47,41 @@ class YouTubePlugin : Plugin() {
 
         openSettings = { ctx ->
             val targetCtx = getValidContext(ctx) ?: ctx
-            showSettingsDialog(targetCtx)
+            showMainMenuDialog(targetCtx)
         }
     }
 
-    private fun showSettingsDialog(context: Context) {
+    // Ana Menü (Change localization / Change homepage sections)
+    private fun showMainMenuDialog(context: Context) {
+        val options = arrayOf("Change localization", "Change homepage sections")
+
+        AlertDialog.Builder(context)
+            .setTitle("YouTube plugin settings")
+            .setItems(options) { dialog, which ->
+                when (which) {
+                    0 -> showLocalizationDialog(context)
+                    1 -> showHomepageSectionsDialog(context)
+                }
+                dialog.dismiss()
+            }
+            .setNegativeButton("Kapat") { dialog, _ -> dialog.dismiss() }
+            .show()
+    }
+
+    // 1. Bölüm: Dil ve Ülke Ayarları
+    private fun showLocalizationDialog(context: Context) {
         val layout = LinearLayout(context).apply {
             orientation = LinearLayout.VERTICAL
             setPadding(50, 40, 50, 20)
         }
 
-        val langLabel = TextView(context).apply { text = "Dil Kodu (Örn: tr, en):" }
+        val langLabel = TextView(context).apply { text = "Dil Kodu (Örn: tr, en, it):" }
         val langInput = EditText(context).apply {
             setText(sharedPref?.getString("language", "tr") ?: "tr")
         }
 
-        val countryLabel = TextView(context).apply { 
-            text = "Ülke Kodu (Örn: TR, US):" 
+        val countryLabel = TextView(context).apply {
+            text = "Ülke Kodu (Örn: TR, US, IT):"
             setPadding(0, 30, 0, 0)
         }
         val countryInput = EditText(context).apply {
@@ -77,7 +94,7 @@ class YouTubePlugin : Plugin() {
         layout.addView(countryInput)
 
         AlertDialog.Builder(context)
-            .setTitle("YouTube Ayarları")
+            .setTitle("Change localization")
             .setView(layout)
             .setPositiveButton("Kaydet") { dialog, _ ->
                 val newLang = langInput.text.toString().trim()
@@ -96,8 +113,65 @@ class YouTubePlugin : Plugin() {
                 }
                 dialog.dismiss()
             }
-            .setNegativeButton("İptal") { dialog, _ ->
+            .setNegativeButton("Geri") { dialog, _ ->
                 dialog.dismiss()
+                showMainMenuDialog(context)
+            }
+            .show()
+    }
+
+    // 2. Bölüm: Ana Sayfa Bölümleri (Trending Aç/Kapa + Playlist/Kanal Ekleme)
+    private fun showHomepageSectionsDialog(context: Context) {
+        val layout = LinearLayout(context).apply {
+            orientation = LinearLayout.VERTICAL
+            setPadding(50, 40, 50, 20)
+        }
+
+        // Trending Switch Satırı
+        val isTrendingEnabled = sharedPref?.getBoolean("trending", true) ?: true
+        val trendingSwitch = SwitchCompat(context).apply {
+            text = "Trending"
+            textSize = 16f
+            isChecked = isTrendingEnabled
+            setPadding(0, 10, 0, 30)
+        }
+
+        val urlLabel = TextView(context).apply {
+            text = "Add playlist or channel (URL):"
+            textSize = 14f
+        }
+
+        val urlInput = EditText(context).apply {
+            hint = "https://www.youtube.com/playlist?list=..."
+        }
+
+        layout.addView(trendingSwitch)
+        layout.addView(urlLabel)
+        layout.addView(urlInput)
+
+        AlertDialog.Builder(context)
+            .setTitle("Change homepage sections")
+            .setView(layout)
+            .setPositiveButton("Kaydet") { dialog, _ ->
+                val newTrending = trendingSwitch.isChecked
+                val inputUrl = urlInput.text.toString().trim()
+
+                val editor = sharedPref?.edit()
+                editor?.putBoolean("trending", newTrending)
+
+                if (inputUrl.isNotEmpty()) {
+                    val currentUrls = sharedPref?.getStringSet("custom_urls", mutableSetOf())?.toMutableSet() ?: mutableSetOf()
+                    currentUrls.add(inputUrl)
+                    editor?.putStringSet("custom_urls", currentUrls)
+                    Toast.makeText(context, "URL eklendi!", Toast.LENGTH_SHORT).show()
+                }
+
+                editor?.apply()
+                dialog.dismiss()
+            }
+            .setNegativeButton("Geri") { dialog, _ ->
+                dialog.dismiss()
+                showMainMenuDialog(context)
             }
             .show()
     }
