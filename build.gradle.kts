@@ -80,7 +80,7 @@ subprojects {
 
             compilerOptions {
 
-                jvmTarget.set(JvmTarget.JVM_17)
+                jvmTarget = JvmTarget.JVM_17
 
                 freeCompilerArgs.addAll(
                     "-Xno-call-assertions",
@@ -98,9 +98,9 @@ subprojects {
         val implementation by configurations
 
 
-implementation(
-    "com.github.recloudstream.cloudstream:library:-SNAPSHOT"
-)
+        implementation(
+            "com.github.recloudstream.cloudstream:library:-SNAPSHOT"
+        )
 
 
         implementation(kotlin("stdlib"))
@@ -123,11 +123,6 @@ implementation(
 
         implementation(
             "com.github.teamnewpipe:NewPipeExtractor:v0.25.2"
-        )
-
-
-        implementation(
-            "com.github.keyiflerolsun:CloudflareKiller:master-SNAPSHOT"
         )
     }
 }
