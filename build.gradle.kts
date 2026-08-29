@@ -99,9 +99,8 @@ subprojects {
 
 
 implementation(
-    "com.github.recloudstream:cloudstream-library:master-SNAPSHOT"
+    "com.github.recloudstream.cloudstream:library:-SNAPSHOT"
 )
-
 
         implementation(kotlin("stdlib"))
 
