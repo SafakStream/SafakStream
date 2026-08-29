@@ -1,8 +1,8 @@
 {
-"name": "SafakStream Repository",
-"description": "CloudStream extensions by SafakStream",
-"manifestVersion": 1,
-"pluginLists": [
-"https://raw.githubusercontent.com/SafakStream/SafakStream/builds/plugins.json"
-]
+    "name": "SafakStream Repository",
+    "description": "CloudStream extensions by SafakStream",
+    "iconUrl": "https://raw.githubusercontent.com/SafakStream/SafakStream/master/logo.png",
+    "pluginLists": [
+        "https://raw.githubusercontent.com/SafakStream/SafakStream/builds/plugins.json"
+    ]
 }
