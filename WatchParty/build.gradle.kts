@@ -1,31 +1,17 @@
 @file:Suppress("UnstableApiUsage")
 
-import org.jetbrains.kotlin.konan.properties.Properties
-
 plugins {
     id("org.jetbrains.kotlin.plugin.serialization") version "2.4.0"
 }
 
-version = 4
+version = 6
 
 cloudstream {
     authors = listOf("DieGon")
-
-    /**
-     * Status int:
-     * 0: Down
-     * 1: Ok
-     * 2: Slow
-     * 3: Beta only
-     * */
     status = 3 
-
-    tvTypes = listOf(
-        "Others",
-    )
-
+    tvTypes = listOf("Others")
     iconUrl = "https://raw.githubusercontent.com/DieGon7771/ItaliaInStreaming/master/WatchParty/WatchParty_icon.png"
-    description = "⚠️ BETA ⚠️ Watch movies and TV series together in real-time with live chat (Up to 5 users)."
+    description = "⚠️ BETA ⚠️ Watch movies and TV series together in real-time with live chat."
     requiresResources = true
 }
 
@@ -33,13 +19,7 @@ android {
     namespace = "it.dogior.hadEnough"
 
     defaultConfig {
-        val properties = Properties()
-        val secretsFile = project.rootProject.file("secrets.properties")
-        if (secretsFile.exists()) {
-            properties.load(secretsFile.inputStream())
-        }
-        val relay = properties.getProperty("WATCHPARTY_RELAY").takeIf { !it.isNullOrEmpty() } ?: "wss://relay.dogior.it"
-        buildConfigField("String", "WATCHPARTY_RELAY", "\"$relay\"")
+        buildConfigField("String", "WATCHPARTY_RELAY", "\"wss://relay.dogior.it/\"")
     }
 
     buildFeatures {
