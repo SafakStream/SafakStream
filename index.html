@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="theme-color" content="#5865F2">
+
+    <title>SafakStream | CloudStream</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+            background: #111318;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 520px;
+            text-align: center;
+        }
+
+        .logo {
+            width: 90px;
+            height: 90px;
+            margin: 0 auto 20px;
+            border-radius: 22px;
+            background: linear-gradient(135deg, #5865F2, #7289DA);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 42px;
+            font-weight: bold;
+            box-shadow: 0 10px 30px rgba(88, 101, 242, 0.3);
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 32px;
+        }
+
+        .subtitle {
+            margin-top: 10px;
+            color: #aeb3c2;
+            line-height: 1.6;
+        }
+
+        .card {
+            margin-top: 30px;
+            padding: 28px 22px;
+            background: #1b1e26;
+            border: 1px solid #2b2f3a;
+            border-radius: 18px;
+        }
+
+        .button {
+            display: block;
+            width: 100%;
+            padding: 17px;
+            background: #5865F2;
+            color: white;
+            text-decoration: none;
+            border-radius: 12px;
+            font-size: 18px;
+            font-weight: bold;
+            transition: 0.2s;
+        }
+
+        .button:hover {
+            transform: translateY(-2px);
+            opacity: 0.92;
+        }
+
+        .manual {
+            margin-top: 25px;
+            text-align: left;
+        }
+
+        .manual h2 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .link-box {
+            background: #111318;
+            border: 1px solid #2b2f3a;
+            border-radius: 10px;
+            padding: 12px;
+            font-size: 13px;
+            color: #aeb3c2;
+            word-break: break-all;
+        }
+
+        .info {
+            margin-top: 25px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
+        .info div {
+            background: #1b1e26;
+            border: 1px solid #2b2f3a;
+            border-radius: 12px;
+            padding: 15px;
+        }
+
+        .info strong {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .info span {
+            color: #aeb3c2;
+            font-size: 14px;
+        }
+
+        footer {
+            margin-top: 25px;
+            color: #777d8d;
+            font-size: 13px;
+        }
+
+        footer a {
+            color: #7289DA;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="logo">S</div>
+
+    <h1>SafakStream</h1>
+
+    <p class="subtitle">
+        CloudStream için dizi, film ve canlı yayın eklentileri.
+    </p>
+
+    <div class="card">
+
+        <a class="button"
+           href="cloudstreamrepo://raw.githubusercontent.com/SafakStream/SafakStream/builds/repo.json">
+            📲 CloudStream'e Ekle
+        </a>
+
+        <div class="manual">
+            <h2>🔗 Manuel Kurulum</h2>
+
+            <p class="subtitle">
+                CloudStream → Ayarlar → Eklentiler → Depo Ekle
+            </p>
+
+            <div class="link-box">
+                https://raw.githubusercontent.com/SafakStream/SafakStream/builds/repo.json
+            </div>
+        </div>
+
+    </div>
+
+    <div class="info">
+
+        <div>
+            <strong>📦 Depo</strong>
+            <span>SafakStream</span>
+        </div>
+
+        <div>
+            <strong>📱 Platform</strong>
+            <span>CloudStream</span>
+        </div>
+
+    </div>
+
+    <footer>
+        SafakStream CloudStream Eklentileri
+        <br><br>
+        <a href="https://github.com/SafakStream/SafakStream">
+            GitHub Deposunu Gör
+        </a>
+    </footer>
+
+</div>
+
+</body>
+</html>
