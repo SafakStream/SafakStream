@@ -6,7 +6,7 @@ plugins {
     id("org.jetbrains.kotlin.plugin.serialization") version "2.4.0"
 }
 
-version = 8
+version = 9
 
 cloudstream {
     authors = listOf("DieGon")
@@ -26,7 +26,7 @@ android {
         if (secretsFile.exists()) {
             properties.load(secretsFile.inputStream())
         }
-        val relay = properties.getProperty("WATCHPARTY_RELAY").takeIf { !it.isNullOrEmpty() } ?: "wss://echo.websocket.org"
+        val relay = properties.getProperty("WATCHPARTY_RELAY").takeIf { !it.isNullOrEmpty() } ?: "wss://relay.streamita.it"
         buildConfigField("String", "WATCHPARTY_RELAY", "\"$relay\"")
     }
 
