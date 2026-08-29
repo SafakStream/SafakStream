@@ -1,10 +1,12 @@
 @file:Suppress("UnstableApiUsage")
 
+import org.jetbrains.kotlin.konan.properties.Properties
+
 plugins {
     id("org.jetbrains.kotlin.plugin.serialization") version "2.4.0"
 }
 
-version = 6
+version = 7
 
 cloudstream {
     authors = listOf("DieGon")
@@ -19,7 +21,13 @@ android {
     namespace = "it.dogior.hadEnough"
 
     defaultConfig {
-        buildConfigField("String", "WATCHPARTY_RELAY", "\"wss://relay.dogior.it/\"")
+        val properties = Properties()
+        val secretsFile = project.rootProject.file("secrets.properties")
+        if (secretsFile.exists()) {
+            properties.load(secretsFile.inputStream())
+        }
+        val relay = properties.getProperty("WATCHPARTY_RELAY").takeIf { !it.isNullOrEmpty() } ?: "wss://relay.damus.io"
+        buildConfigField("String", "WATCHPARTY_RELAY", "\"$relay\"")
     }
 
     buildFeatures {
