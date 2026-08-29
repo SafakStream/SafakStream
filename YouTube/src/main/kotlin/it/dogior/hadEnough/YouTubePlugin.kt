@@ -9,6 +9,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SwitchCompat
 import com.lagradost.cloudstream3.plugins.CloudstreamPlugin
 import com.lagradost.cloudstream3.plugins.Plugin
+import com.lagradost.cloudstream3.utils.AppUtils.toJson
+import com.lagradost.cloudstream3.utils.AppUtils.parseJson
 import org.schabi.newpipe.extractor.NewPipe
 import org.schabi.newpipe.extractor.localization.ContentCountry
 import org.schabi.newpipe.extractor.localization.Localization
@@ -51,7 +53,6 @@ class YouTubePlugin : Plugin() {
         }
     }
 
-    // Ana Menü (Change localization / Change homepage sections)
     private fun showMainMenuDialog(context: Context) {
         val options = arrayOf("Change localization", "Change homepage sections")
 
@@ -68,7 +69,6 @@ class YouTubePlugin : Plugin() {
             .show()
     }
 
-    // 1. Bölüm: Dil ve Ülke Ayarları
     private fun showLocalizationDialog(context: Context) {
         val layout = LinearLayout(context).apply {
             orientation = LinearLayout.VERTICAL
@@ -120,50 +120,75 @@ class YouTubePlugin : Plugin() {
             .show()
     }
 
-    // 2. Bölüm: Ana Sayfa Bölümleri (Trending Aç/Kapa + Playlist/Kanal Ekleme)
     private fun showHomepageSectionsDialog(context: Context) {
         val layout = LinearLayout(context).apply {
             orientation = LinearLayout.VERTICAL
             setPadding(50, 40, 50, 20)
         }
 
-        // Trending Switch Satırı
         val isTrendingEnabled = sharedPref?.getBoolean("trending", true) ?: true
         val trendingSwitch = SwitchCompat(context).apply {
             text = "Trending"
             textSize = 16f
             isChecked = isTrendingEnabled
-            setPadding(0, 10, 0, 30)
+            setPadding(0, 10, 0, 20)
         }
 
         val urlLabel = TextView(context).apply {
-            text = "Add playlist or channel (URL):"
+            text = "Kanal veya Oynatma Listesi Linki:"
             textSize = 14f
+            setPadding(0, 10, 0, 0)
         }
 
         val urlInput = EditText(context).apply {
-            hint = "https://www.youtube.com/playlist?list=..."
+            hint = "https://youtube.com/@trabzonspor"
+        }
+
+        val currentPlaylists = sharedPref?.getStringSet("playlists", emptySet()) ?: emptySet()
+        val currentUrls = currentPlaylists.mapNotNull {
+            try {
+                parseJson<Triple<String, String, Long>>(it).first
+            } catch (e: Exception) {
+                null
+            }
+        }
+
+        val infoLabel = TextView(context).apply {
+            text = if (currentUrls.isNotEmpty()) {
+                "Ekli Kanallar/Listeler (${currentUrls.size}):\n" + currentUrls.joinToString("\n") { "• $it" }
+            } else {
+                "Henüz özel kanal/liste eklenmedi."
+            }
+            textSize = 12f
+            setPadding(0, 20, 0, 10)
         }
 
         layout.addView(trendingSwitch)
         layout.addView(urlLabel)
         layout.addView(urlInput)
+        layout.addView(infoLabel)
 
-        AlertDialog.Builder(context)
+        val dialogBuilder = AlertDialog.Builder(context)
             .setTitle("Change homepage sections")
             .setView(layout)
             .setPositiveButton("Kaydet") { dialog, _ ->
                 val newTrending = trendingSwitch.isChecked
-                val inputUrl = urlInput.text.toString().trim()
+                var inputUrl = urlInput.text.toString().trim()
+
+                // URL temizleme (?si=... gibi takip parametrelerini atar)
+                if (inputUrl.contains("?si=")) {
+                    inputUrl = inputUrl.substringBefore("?si=")
+                }
 
                 val editor = sharedPref?.edit()
                 editor?.putBoolean("trending", newTrending)
 
                 if (inputUrl.isNotEmpty()) {
-                    val currentUrls = sharedPref?.getStringSet("custom_urls", mutableSetOf())?.toMutableSet() ?: mutableSetOf()
-                    currentUrls.add(inputUrl)
-                    editor?.putStringSet("custom_urls", currentUrls)
-                    Toast.makeText(context, "URL eklendi!", Toast.LENGTH_SHORT).show()
+                    val updatedSet = currentPlaylists.toMutableSet()
+                    val tripleJson = toJson(Triple(inputUrl, inputUrl, System.currentTimeMillis()))
+                    updatedSet.add(tripleJson)
+                    editor?.putStringSet("playlists", updatedSet)
+                    Toast.makeText(context, "Kanal başarıyla eklendi!", Toast.LENGTH_SHORT).show()
                 }
 
                 editor?.apply()
@@ -173,6 +198,14 @@ class YouTubePlugin : Plugin() {
                 dialog.dismiss()
                 showMainMenuDialog(context)
             }
-            .show()
+
+        if (currentPlaylists.isNotEmpty()) {
+            dialogBuilder.setNeutralButton("Listeleri Sıfırla") { _, _ ->
+                sharedPref?.edit()?.putStringSet("playlists", emptySet())?.apply()
+                Toast.makeText(context, "Tüm özel kanallar silindi!", Toast.LENGTH_SHORT).show()
+            }
+        }
+
+        dialogBuilder.show()
     }
 }
