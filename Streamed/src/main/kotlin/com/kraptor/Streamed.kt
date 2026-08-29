@@ -3,16 +3,12 @@
 package com.kraptor
 
 import android.util.Log
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties
-import com.fasterxml.jackson.annotation.JsonProperty
-import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
-import com.fasterxml.jackson.module.kotlin.readValue
-import com.fasterxml.jackson.module.kotlin.registerKotlinModule
 import com.lagradost.cloudstream3.*
 import com.lagradost.cloudstream3.utils.*
+import com.lagradost.cloudstream3.utils.AppUtils.parseJson
 import kotlinx.coroutines.*
 
-class Streamed() : MainAPI() {
+class Streamed : MainAPI() {
     override var mainUrl = "https://streamed.pk"
     override var name = "Streamed"
     override val hasMainPage = true
@@ -20,7 +16,6 @@ class Streamed() : MainAPI() {
     override val hasQuickSearch = true
     override val supportedTypes = setOf(TvType.Live)
     override val vpnStatus = VPNStatus.MightBeNeeded
-
 
     override val mainPage = mainPageOf(
         "${mainUrl}/api/matches/live/popular" to "Live Popular",
@@ -42,13 +37,9 @@ class Streamed() : MainAPI() {
         "${mainUrl}/api/matches/other/popular" to "Other"
     )
 
-
     override suspend fun getMainPage(page: Int, request: MainPageRequest): HomePageResponse {
-
         val textdoc = app.get(request.data).text
-        val document = textdoc
-        val mapper = jacksonObjectMapper().registerKotlinModule()
-        val matches: List<Matches> = mapper.readValue(document)
+        val matches: List<Matches> = parseJson(textdoc)
 
         val items = matches
             .filter { it.sources?.isNotEmpty() == true }
@@ -80,11 +71,9 @@ class Streamed() : MainAPI() {
     }
 
     override suspend fun search(query: String): List<SearchResponse> {
-        val mapper = jacksonObjectMapper().registerKotlinModule()
-
         val matches = mutableListOf<Matches>()
         val txt = app.get("$mainUrl/api/matches/all").text
-        val list: List<Matches> = mapper.readValue(txt)
+        val list: List<Matches> = parseJson(txt)
         matches.addAll(list)
 
         if (matches.isEmpty()) return emptyList()
@@ -158,16 +147,14 @@ class Streamed() : MainAPI() {
         return search(query)
     }
 
-    override suspend fun load(url: String): LoadResponse? {
+    override suspend fun load(url: String): LoadResponse {
         val sourceId = url.substringAfterLast("/")
-
-        val mapper = jacksonObjectMapper().registerKotlinModule()
         val txt = app.get("$mainUrl/api/matches/all").text
-        val matches: List<Matches> = mapper.readValue(txt)
+        val matches: List<Matches> = parseJson(txt)
 
-        val match = matches.find { match ->
-            match.sources?.any { it.id == sourceId } == true || match.id == sourceId
-        } ?: return null
+        val match = matches.find { m ->
+            m.sources?.any { it.id == sourceId } == true || m.id == sourceId
+        } ?: throw ErrorLoadingException("Maç bilgisi bulunamadı")
 
         val title = match.title ?: "Bilinmeyen Başlık"
 
@@ -194,34 +181,17 @@ class Streamed() : MainAPI() {
                     val minutes = remainingMinutes % 60
 
                     when {
-                        hours > 24 -> {
-                            val days = hours / 24
-                            val remainingHours = hours % 24
-                            "Maça kalan süre: $days gün $remainingHours saat"
-                        }
-
-                        hours > 0 -> {
-                            "Maça kalan süre: $hours saat $minutes dakika"
-                        }
-
-                        minutes > 0 -> {
-                            "Maça kalan süre: $minutes dakika"
-                        }
-
-                        else -> {
-                            "Maç yakında başlayacak"
-                        }
+                        hours > 24 -> "Maça kalan süre: ${hours / 24} gün ${hours % 24} saat"
+                        hours > 0 -> "Maça kalan süre: $hours saat $minutes dakika"
+                        minutes > 0 -> "Maça kalan süre: $minutes dakika"
+                        else -> "Maç yakında başlayacak"
                     }
                 }
-
-                else -> {
-                    "Maç şu anda canlı veya tamamlandı - Bağlantı bulunamazsa basılıp tutup bağlantıları yenilemeyi deneyebilirsiniz."
-                }
+                else -> "Maç şu anda canlı veya tamamlandı"
             }
         } ?: "Maç zamanı bilgisi bulunamadı"
 
         val tags = match.category?.let { listOf(it) } ?: emptyList()
-
         val sourcesCount = match.sources?.size ?: 0
         val finalDescription = if (sourcesCount > 1) {
             "$description\n\nMevcut kaynak sayısı: $sourcesCount"
@@ -244,60 +214,29 @@ class Streamed() : MainAPI() {
         subtitleCallback: (SubtitleFile) -> Unit,
         callback: (ExtractorLink) -> Unit
     ): Boolean = withContext(Dispatchers.IO) {
-
         val sourceId = data.substringAfterLast("/")
-
-        Log.d("Ayzen", sourceId)
-        val mapper = jacksonObjectMapper().registerKotlinModule()
 
         try {
             val apiUrl = "$mainUrl/api/matches/all"
+            val txt = app.get(apiUrl).text
+            val matches: List<Matches> = parseJson(txt)
 
-            Log.d("Ayzen", apiUrl)
-            val response = app.get(apiUrl)
-            val txt = response.text
-
-            val matches: List<Matches> = mapper.readValue(txt)
-
-            Log.d("Ayzen", "${matches.size}")
             val match = matches.find { m ->
                 val hasSourceId = m.sources?.any { it.id == sourceId } == true
                 val isMatchId = m.id == sourceId
                 hasSourceId || isMatchId
-            }
-
-            if (match == null) {
-                Log.d("Ayzen", sourceId)
-                return@withContext false
-            }
-
-            Log.d("Ayzen", "${match.title} ${match.sources?.size ?: 0}")
-
-            fun viewersOf(s: Stream): Int {
-                return try {
-                    when (val v = s.viewers) {
-                        is Number -> v.toInt()
-                        is String -> v.toIntOrNull() ?: 0
-                        else -> 0
-                    }
-                } catch (e: Exception) { 0 }
-            }
+            } ?: return@withContext false
 
             val allStreams = mutableListOf<Pair<Stream, String>>()
 
-            match.sources?.forEachIndexed { index, source ->
+            match.sources?.forEachIndexed { _, source ->
                 val sType = source.source
                 val sId = source.id
                 if (sType != null && sId != null) {
                     try {
                         val streamApiUrl = "$mainUrl/api/stream/$sType/$sId"
-                        Log.d("Ayzen", streamApiUrl)
                         val sResponse = app.get(streamApiUrl).text
-                        val streams: List<Stream> = mapper.readValue(
-                            sResponse,
-                            object : com.fasterxml.jackson.core.type.TypeReference<List<Stream>>() {}
-                        )
-                        Log.d("Ayzen", "$index $sType ${streams.size}")
+                        val streams: List<Stream> = parseJson(sResponse)
 
                         if (streams.isNotEmpty()) {
                             streams.forEach {
@@ -338,72 +277,55 @@ class Streamed() : MainAPI() {
                 }
             }
 
-            val streamsWithPositiveViewers = allStreams.filter { viewersOf(it.first) > 0 }
-            val zeroViewerStreams = allStreams.filter { viewersOf(it.first) <= 0 }
-            val streamsToProcess: List<Pair<Stream, String>> =
-                streamsWithPositiveViewers.sortedByDescending { viewersOf(it.first) } + zeroViewerStreams
-
-            Log.d("Ayzen", "${streamsToProcess.size}")
-
             val processedStreams = mutableSetOf<String>()
 
-            streamsToProcess.forEachIndexed { idx, (stream, sourceType) ->
+            allStreams.forEach { (stream, _) ->
                 try {
                     val embedUrl = stream.embedUrl.toString()
                     if (embedUrl.isNotEmpty() && !processedStreams.contains(embedUrl)) {
                         processedStreams.add(embedUrl)
 
-                        Log.d("Ayzen", embedUrl)
                         loadExtractor(
                             url = embedUrl,
                             referer = mainUrl,
-                            subtitleCallback = { sub ->
-                                subtitleCallback.invoke(sub)
-                            },
-                            callback = { link ->
-                                callback.invoke(link)
-                            }
+                            subtitleCallback = { sub -> subtitleCallback.invoke(sub) },
+                            callback = { link -> callback.invoke(link) }
                         )
                     }
                 } catch (e: Exception) {
-                    Log.e("Ayzen", "$idx")
+                    e.printStackTrace()
                 }
             }
 
             return@withContext true
         } catch (e: Exception) {
-            Log.e("Streamed", "İframe yok")
+            Log.e("Streamed", "Stream error: ${e.message}")
             return@withContext false
         }
     }
 
-
-
-    @JsonIgnoreProperties(ignoreUnknown = true)
     data class Matches(
-        @JsonProperty("id") val id: String?,
-        @JsonProperty("title") val title: String?,
-        @JsonProperty("category") val category: String?,
-        @JsonProperty("date") val date: Long?,
-        @JsonProperty("popular") val popular: Boolean?,
-        @JsonProperty("sources") val sources: List<Sources>?,
-        @JsonProperty("poster") val poster: String?
+        val id: String? = null,
+        val title: String? = null,
+        val category: String? = null,
+        val date: Long? = null,
+        val popular: Boolean? = null,
+        val sources: List<Sources>? = null,
+        val poster: String? = null
     )
 
-    @JsonIgnoreProperties(ignoreUnknown = true)
     data class Sources(
-        @JsonProperty("id") val id: String?,
-        @JsonProperty("source") val source: String?,
+        val id: String? = null,
+        val source: String? = null
     )
 
-    @JsonIgnoreProperties(ignoreUnknown = true)
     data class Stream(
-        @JsonProperty("id") val id: String?,
-        @JsonProperty("streamNo") val streamNo: Int?,
-        @JsonProperty("language") val language: String?,
-        @JsonProperty("embedUrl") val embedUrl: String?,
-        @JsonProperty("source") val source: String?,
-        @JsonProperty("hd") val hd: Boolean?,
-        @JsonProperty("viewers") val viewers: Int?
+        val id: String? = null,
+        val streamNo: Int? = null,
+        val language: String? = null,
+        val embedUrl: String? = null,
+        val source: String? = null,
+        val hd: Boolean? = null,
+        val viewers: Int? = null
     )
 }
