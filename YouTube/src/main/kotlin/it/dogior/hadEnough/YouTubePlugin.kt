@@ -175,7 +175,6 @@ class YouTubePlugin : Plugin() {
                 val newTrending = trendingSwitch.isChecked
                 var inputUrl = urlInput.text.toString().trim()
 
-                // URL temizleme (?si=... gibi takip parametrelerini atar)
                 if (inputUrl.contains("?si=")) {
                     inputUrl = inputUrl.substringBefore("?si=")
                 }
@@ -185,7 +184,7 @@ class YouTubePlugin : Plugin() {
 
                 if (inputUrl.isNotEmpty()) {
                     val updatedSet = currentPlaylists.toMutableSet()
-                    val tripleJson = toJson(Triple(inputUrl, inputUrl, System.currentTimeMillis()))
+                    val tripleJson = Triple(inputUrl, inputUrl, System.currentTimeMillis()).toJson()
                     updatedSet.add(tripleJson)
                     editor?.putStringSet("playlists", updatedSet)
                     Toast.makeText(context, "Kanal başarıyla eklendi!", Toast.LENGTH_SHORT).show()
