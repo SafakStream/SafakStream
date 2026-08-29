@@ -52,7 +52,6 @@ fun Project.android(configuration: LibraryExtension.() -> Unit) {
 }
 
 
-
 subprojects {
 
     apply(plugin = "com.android.library")
@@ -68,7 +67,6 @@ subprojects {
 
         authors = listOf("SafakStream")
     }
-
 
 
     android {
@@ -113,7 +111,6 @@ subprojects {
     }
 
 
-
     dependencies {
 
         val implementation by configurations
@@ -135,6 +132,12 @@ subprojects {
 
         implementation(
             "org.jsoup:jsoup:1.22.2"
+        )
+
+
+        // NewPipeExtractor - YouTube Provider
+        implementation(
+            "com.github.teamnewpipe:NewPipeExtractor:v0.25.2"
         )
 
 
@@ -188,7 +191,6 @@ subprojects {
         )
     }
 }
-
 
 
 tasks.register<Delete>("clean") {
