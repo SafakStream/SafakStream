@@ -1,0 +1,235 @@
+package it.dogior.hadEnough.availability
+
+import android.content.SharedPreferences
+import com.lagradost.cloudstream3.app
+import it.dogior.hadEnough.StreamCenterPlugin
+import it.dogior.hadEnough.util.StreamCenterVpnGuard
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.async
+import kotlinx.coroutines.awaitAll
+import kotlinx.coroutines.coroutineScope
+import okhttp3.OkHttpClient
+import okhttp3.Request
+import okhttp3.MediaType.Companion.toMediaType
+import okhttp3.RequestBody.Companion.toRequestBody
+import org.json.JSONObject
+import java.net.SocketTimeoutException
+import java.net.UnknownHostException
+import java.util.concurrent.TimeUnit
+import javax.net.ssl.SSLException
+
+internal object StreamCenterAvailabilityChecker {
+    private data class CheckResult(
+        val available: Boolean,
+        val detail: String? = null,
+    )
+
+    private val httpClient = OkHttpClient.Builder()
+        .connectTimeout(5L, TimeUnit.SECONDS)
+        .readTimeout(7L, TimeUnit.SECONDS)
+        .writeTimeout(7L, TimeUnit.SECONDS)
+        .callTimeout(9L, TimeUnit.SECONDS)
+        .followRedirects(true)
+        .followSslRedirects(true)
+        .build()
+    private val requestHeaders = mapOf(
+        "User-Agent" to "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:133.0) Gecko/20100101 Firefox/133.0",
+        "Accept-Language" to "it-IT,it;q=0.9,en-US;q=0.5,en;q=0.3",
+    )
+
+    suspend fun check(
+        sharedPref: SharedPreferences?,
+        onProgress: suspend (
+            name: String,
+            isRunning: Boolean,
+            result: Boolean?,
+            detail: String?,
+        ) -> Unit,
+    ): List<Pair<String, Boolean>> = coroutineScope {
+        StreamCenterVpnGuard.requireInternetAccess(sharedPref)
+        fun sourceUrl(key: String) = StreamCenterPlugin.getSourceBaseUrl(sharedPref, key)
+
+        val checks: List<Pair<String, suspend () -> CheckResult>> = buildList {
+            add("AnimeUnity" to suspend {
+                urlReachable(sourceUrl(StreamCenterPlugin.PREF_SOURCE_ANIMEUNITY))
+            })
+            add("AnimeWorld" to suspend {
+                urlReachable(sourceUrl(StreamCenterPlugin.PREF_SOURCE_ANIMEWORLD))
+            })
+            add("AnimeSaturn" to suspend {
+                urlReachable(sourceUrl(StreamCenterPlugin.PREF_SOURCE_ANIMESATURN))
+            })
+            add("StreamingCommunity" to suspend {
+                urlReachable(sourceUrl(StreamCenterPlugin.PREF_SOURCE_STREAMINGCOMMUNITY))
+            })
+            add("VixCloud" to suspend {
+                urlReachable(sourceUrl(StreamCenterPlugin.PREF_SOURCE_VIXCLOUD))
+            })
+            add("VixSrc" to suspend {
+                urlReachable(sourceUrl(StreamCenterPlugin.PREF_SOURCE_VIXSRC))
+            })
+            add("VidxGo" to suspend {
+                isVidxGoAvailable(sourceUrl(StreamCenterPlugin.PREF_SOURCE_VIDXGO))
+            })
+            add("AniZip" to suspend {
+                jsonApiReachable(
+                    "https://api.ani.zip/mappings?anilist_id=1",
+                    "application/json",
+                    expectedKey = "episodes",
+                )
+            })
+            add("MyAnimeList" to ::isJikanAvailable)
+            add("AniList" to ::isAnilistAvailable)
+            add("Kitsu" to suspend {
+                jsonApiReachable("https://kitsu.io/api/edge/anime/1", "application/vnd.api+json")
+            })
+            add("TMDB" to suspend { urlReachable("https://www.themoviedb.org") })
+        }
+
+        checks.map { (name, check) ->
+            async(Dispatchers.IO) {
+                onProgress(name, true, null, null)
+                val result = runCatching { check() }
+                    .getOrElse { error -> CheckResult(false, failureDetail(error)) }
+                onProgress(name, false, result.available, result.detail)
+                name to result.available
+            }
+        }.awaitAll()
+    }
+
+    private suspend fun isAnilistAvailable(): CheckResult {
+        val body = JSONObject()
+            .put("query", "query { Media(id: 1, type: ANIME) { id } }")
+            .toString()
+        val request = Request.Builder()
+            .url("https://graphql.anilist.co")
+            .header("Accept", "application/json")
+            .header("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:133.0) Gecko/20100101 Firefox/133.0")
+            .header("Origin", "https://anilist.co")
+            .header("Referer", "https://anilist.co/")
+            .post(body.toRequestBody("application/json".toMediaType()))
+            .build()
+        val response = execute(request)
+        if (response.code !in 200..299) return CheckResult(false, "HTTP ${response.code}")
+        return if (JSONObject(response.body).optJSONObject("data")?.opt("Media") != null) {
+            CheckResult(true)
+        } else {
+            CheckResult(false, "Risposta API non valida")
+        }
+    }
+
+    private suspend fun isJikanAvailable(): CheckResult {
+        val response = app.get(
+            "https://api.jikan.moe/v4/genres/anime",
+            headers = requestHeaders + ("Accept" to "application/json"),
+            cacheTime = 0,
+            timeout = 10L,
+        )
+        return when (response.code) {
+            429 -> CheckResult(true, "Limite temporaneo di richieste (HTTP 429)")
+            in 200..299 -> jikanJsonResult(response.text)
+            else -> CheckResult(false, "HTTP ${response.code}")
+        }
+    }
+
+    private suspend fun isVidxGoAvailable(baseUrl: String): CheckResult {
+        if (baseUrl.isBlank()) return CheckResult(false, "URL non configurato")
+        val normalizedBaseUrl = baseUrl.trimEnd('/')
+        val headers = mapOf(
+            "User-Agent" to "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0.0.0 Safari/537.36",
+            "Accept" to "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+            "Accept-Language" to "it-IT,it;q=0.9,en-US;q=0.8,en;q=0.7",
+            "Sec-Fetch-Dest" to "iframe",
+            "Sec-Fetch-Mode" to "navigate",
+            "Sec-Fetch-Site" to "cross-site",
+            "Referer" to "$normalizedBaseUrl/",
+            "DNT" to "1",
+        )
+
+        var lastHttpCode: Int? = null
+        var lastFailure: Throwable? = null
+        val checkUrls = listOf("$normalizedBaseUrl/26657236", "$normalizedBaseUrl/")
+        for (url in checkUrls) {
+            val response = runCatching {
+                app.get(url, headers = headers, cacheTime = 0, timeout = 10L)
+            }.onFailure { error ->
+                lastFailure = error
+            }.getOrNull() ?: continue
+
+            lastHttpCode = response.code
+            when {
+                response.code in 200..399 -> return CheckResult(true)
+                response.code in setOf(401, 403, 429) -> {
+                    return CheckResult(true, "Host raggiungibile, accesso protetto (HTTP ${response.code})")
+                }
+            }
+        }
+        lastHttpCode?.let { return CheckResult(false, "HTTP $it") }
+        lastFailure?.let { throw it }
+        return CheckResult(false, "Risposta non disponibile")
+    }
+
+    private fun jikanJsonResult(body: String): CheckResult {
+        val json = runCatching { JSONObject(body) }.getOrNull()
+            ?: return CheckResult(false, "JSON non valido: ${body.trim().take(100)}")
+        if (json.has("data")) return CheckResult(true)
+        val status = json.optInt("status", 0)
+        val type = json.optString("type").trim()
+        val message = json.optString("message").trim()
+        val detail = listOf(type, message).filter(String::isNotBlank).joinToString(": ")
+        if (status == 429 || detail.contains("rate", ignoreCase = true)) {
+            return CheckResult(true, "Limite temporaneo di richieste (Jikan 429)")
+        }
+        return CheckResult(
+            false,
+            detail.takeIf(String::isNotBlank) ?: "JSON senza dati: ${json.keys().asSequence().toList()}",
+        )
+    }
+
+    private suspend fun jsonApiReachable(
+        url: String,
+        accept: String,
+        expectedKey: String = "data",
+    ): CheckResult {
+        val response = execute(request(url, requestHeaders + ("Accept" to accept)))
+        if (response.code !in 200..299) return CheckResult(false, "HTTP ${response.code}")
+        return if (JSONObject(response.body).has(expectedKey)) {
+            CheckResult(true)
+        } else {
+            CheckResult(false, "Risposta JSON senza '$expectedKey'")
+        }
+    }
+
+    private suspend fun urlReachable(url: String): CheckResult {
+        if (url.isBlank()) return CheckResult(false, "URL non configurato")
+        return httpClient.newCall(request(url, requestHeaders)).execute().use { response ->
+            if (response.code in 200..399) CheckResult(true) else CheckResult(false, "HTTP ${response.code}")
+        }
+    }
+
+    private fun request(url: String, headers: Map<String, String>): Request {
+        return Request.Builder().url(url).apply {
+            headers.forEach { (name, value) -> header(name, value) }
+        }.build()
+    }
+
+    private fun execute(request: Request): HttpResponse {
+        return httpClient.newCall(request).execute().use { response ->
+            HttpResponse(response.code, response.body.string())
+        }
+    }
+
+    private fun failureDetail(error: Throwable): String = when (error) {
+        is SocketTimeoutException -> "Timeout di rete"
+        is UnknownHostException -> "Host non trovato"
+        is SSLException -> "Errore TLS/SSL"
+        else -> error.message?.trim()?.takeIf(String::isNotBlank)
+            ?.take(120)
+            ?: error.javaClass.simpleName
+    }
+
+    private data class HttpResponse(
+        val code: Int,
+        val body: String,
+    )
+}
