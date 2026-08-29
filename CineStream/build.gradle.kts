@@ -1,6 +1,8 @@
 version = 481
 
 android {
+    namespace = "com.megix"
+
     defaultConfig {
         android.buildFeatures.buildConfig = true
 
