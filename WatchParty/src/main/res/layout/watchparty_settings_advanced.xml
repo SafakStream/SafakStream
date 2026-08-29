@@ -14,7 +14,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="14dp"
-            android:text="Watch Party settings"
+            android:text="Birlikte İzle Ayarları"
             android:textSize="22sp"
             android:textStyle="bold" />
 
@@ -41,7 +41,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Invisible button in the player"
+                        android:text="Oynatıcıda görünmez buton"
                         android:textSize="13sp"
                         android:textStyle="bold" />
 
@@ -50,7 +50,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="2dp"
                         android:alpha="0.6"
-                        android:text="Hides the button over the player but it stays clickable at the same position"
+                        android:text="Oynatıcı üzerindeki butonu gizler ancak aynı konumda tıklanabilir kalır"
                         android:textSize="11sp" />
                 </LinearLayout>
 
@@ -87,7 +87,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Invisible chat icon in the player"
+                        android:text="Oynatıcıda görünmez sohbet simgesi"
                         android:textSize="13sp"
                         android:textStyle="bold" />
 
@@ -96,7 +96,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="2dp"
                         android:alpha="0.6"
-                        android:text="Hides the chat arrow but new messages still show the red dot"
+                        android:text="Sohbet okunu gizler ancak yeni mesajlarda kırmızı nokta görünmeye devam eder"
                         android:textSize="11sp" />
                 </LinearLayout>
 
@@ -117,7 +117,7 @@
                 android:layout_marginTop="12dp"
                 android:background="#33FFFFFF" />
 
-        <LinearLayout
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_vertical"
@@ -133,7 +133,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Chat width (%)"
+                        android:text="Sohbet genişliği (%)"
                         android:textSize="13sp"
                         android:textStyle="bold" />
 
@@ -142,7 +142,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="2dp"
                         android:alpha="0.6"
-                        android:text="Width of the chat panel over the player (default 42, min 20, max 85)"
+                        android:text="Oynatıcı üzerindeki sohbet panelinin genişliği (varsayılan 42, min 20, maks 85)"
                         android:textSize="11sp" />
                 </LinearLayout>
 
@@ -168,7 +168,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="18dp"
             android:layout_marginBottom="10dp"
-            android:text="Chat theme"
+            android:text="Sohbet teması"
             android:textSize="16sp"
             android:textStyle="bold" />
 
@@ -184,7 +184,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:alpha="0.6"
-                android:text="Choose the bubble colors in the chat"
+                android:text="Sohbetteki balon renklerini seçin"
                 android:textSize="11sp" />
         </LinearLayout>
 
@@ -207,7 +207,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Glow-style bubbles"
+                    android:text="Işıltı tarzı balonlar (Glow)"
                     android:textSize="13sp"
                     android:textStyle="bold" />
 
@@ -216,7 +216,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="2dp"
                     android:alpha="0.6"
-                    android:text="Black bubbles with a border in the chosen color, like a neon sign"
+                    android:text="Neon tabela gibi seçilen renkte kenarlığı olan siyah balonlar"
                     android:textSize="11sp" />
             </LinearLayout>
 
@@ -236,7 +236,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="18dp"
             android:layout_marginBottom="10dp"
-            android:text="Chat icon position"
+            android:text="Sohbet simgesi konumu"
             android:textSize="16sp"
             android:textStyle="bold" />
 
@@ -252,7 +252,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="12dp"
                 android:alpha="0.6"
-                android:text="Hold the pad below for ~2s, then drag: it works like a laptop trackpad, moving the real chat icon by the same relative amount."
+                android:text="Aşağıdaki alana ~2 sn basılı tutun ve ardından sürükleyin: Dokunmatik yüzey (trackpad) gibi çalışır ve simgeyi aynı oranda taşır."
                 android:textSize="11sp" />
 
             <FrameLayout
@@ -267,7 +267,7 @@
                     android:layout_gravity="center"
                     android:alpha="0.7"
                     android:gravity="center"
-                    android:text="Hold to move"
+                    android:text="Taşımak için basılı tutun"
                     android:textSize="12sp" />
 
             </FrameLayout>
@@ -288,7 +288,7 @@
                 android:layout_height="44dp"
                 android:layout_marginTop="12dp"
                 android:gravity="center"
-                android:text="Reset to default position"
+                android:text="Varsayılan konuma sıfırla"
                 android:textSize="13sp"
                 android:textStyle="bold" />
 
