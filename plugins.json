@@ -1,0 +1,660 @@
+[
+    {
+        "url": "https://raw.githubusercontent.com/SafakStream/SafakStream/builds/BelgeselX.cs3",
+        "status": 1,
+        "version": 17,
+        "name": "BelgeselX",
+        "internalName": "BelgeselX",
+        "authors": [
+            "keyiflerolsun",
+            "JustRelaxable"
+        ],
+        "description": "En yeni belgeseller, t\u00fcrk\u00e7e altyaz\u0131l\u0131 yada dublaj olarak 1080p kalitesinde HD belgesel izle.",
+        "fileSize": 31167,
+        "repositoryUrl": "https://github.com/SafakStream/SafakStream",
+        "language": "tr",
+        "tvTypes": [
+            "Documentary"
+        ],
+        "iconUrl": "https://www.google.com/s2/favicons?domain=belgeselx.com&sz=%size%",
+        "apiVersion": 1,
+        "fileHash": "sha256-11afcc524f9a2616d4d3e2b170f255d8f78a6ad50ce3ed0c585dcaf74b8d49db"
+    },
+    {
+        "url": "https://raw.githubusercontent.com/SafakStream/SafakStream/builds/CanliTV.cs3",
+        "status": 1,
+        "version": 10,
+        "name": "CanliTV",
+        "internalName": "CanliTV",
+        "authors": [
+            "Adippe",
+            "keyiflerolsun"
+        ],
+        "description": "Canl\u0131 TV",
+        "fileSize": 20480,
+        "repositoryUrl": "https://github.com/SafakStream/SafakStream",
+        "language": "tr",
+        "tvTypes": [
+            "Live"
+        ],
+        "iconUrl": "https://www.google.com/s2/favicons?domain=tr.canlitv.team&sz=%size%",
+        "apiVersion": 1,
+        "fileHash": "sha256-d4e8de61fd99275ecda7a2c1a53da5b1643cfa42e8f6bba0c32383b722de14db"
+    },
+    {
+        "url": "https://raw.githubusercontent.com/SafakStream/SafakStream/builds/CineStream.cs3",
+        "status": 1,
+        "version": 481,
+        "name": "CineStream",
+        "internalName": "CineStream",
+        "authors": [
+            "megix"
+        ],
+        "description": "One stop solution for Movies, Series, Anime, AsianDrama and Torrents",
+        "fileSize": 733780,
+        "repositoryUrl": "https://github.com/SafakStream/SafakStream",
+        "language": "en",
+        "tvTypes": [
+            "TvSeries",
+            "Movie",
+            "AsianDrama",
+            "Anime",
+            "Torrent"
+        ],
+        "iconUrl": "https://github.com/SaurabhKaperwan/CSX/raw/refs/heads/master/CineStream/icon.png",
+        "apiVersion": 1,
+        "fileHash": "sha256-8cd631960b666f9b64c317dde36d50e5a4c533b26e3d5706ad094e82a56979c8"
+    },
+    {
+        "url": "https://raw.githubusercontent.com/SafakStream/SafakStream/builds/DailymotionProvider.cs3",
+        "status": 1,
+        "version": 4,
+        "name": "DailymotionProvider",
+        "internalName": "DailymotionProvider",
+        "authors": [
+            "Luna712"
+        ],
+        "description": "Watch content from Dailymotion",
+        "fileSize": 12959,
+        "repositoryUrl": "https://github.com/SafakStream/SafakStream",
+        "tvTypes": [
+            "Others"
+        ],
+        "iconUrl": "https://www.google.com/s2/favicons?domain=www.dailymotion.com&sz=%size%",
+        "apiVersion": 1,
+        "fileHash": "sha256-72b0f24c409182c68433e212d78a3dcb408c3526af93ec076cc50c5e82597175",
+        "jarFileSize": 55755,
+        "jarUrl": "https://raw.githubusercontent.com/SafakStream/SafakStream/builds/DailymotionProvider.jar",
+        "jarHash": "sha256-513471dc33a600108dd4d207dfb763902a8536c4edfed848666d77542278bf8a"
+    },
+    {
+        "url": "https://raw.githubusercontent.com/SafakStream/SafakStream/builds/DeporTVProvider.cs3",
+        "status": 1,
+        "version": 31,
+        "name": "DeporTVProvider",
+        "internalName": "DeporTVProvider",
+        "authors": [
+            "redblacker8"
+        ],
+        "description": "Deportes eventos en vivo. Sports live events. Futbol. Soccer.",
+        "fileSize": 98592,
+        "repositoryUrl": "https://github.com/SafakStream/SafakStream",
+        "language": "all",
+        "tvTypes": [
+            "Live"
+        ],
+        "iconUrl": "https://yt3.googleusercontent.com/T_d2j2xZMjAxPCehiFR6hAv7jE3swcUzfgV8wCXzv1IL7rCEDv3cgQtIxjdmLVyP6ZrSgIu0nw=s900-c-k-c0x00ffffff-no-rj",
+        "apiVersion": 1,
+        "fileHash": "sha256-96242a9ef8663c361fb95e492e2863bd511e4e04bb61e7361555ef6f1d67675f"
+    },
+    {
+        "url": "https://raw.githubusercontent.com/SafakStream/SafakStream/builds/DiziBox.cs3",
+        "status": 1,
+        "version": 23,
+        "name": "DiziBox",
+        "internalName": "DiziBox",
+        "authors": [
+            "keyiflerolsun"
+        ],
+        "description": "Yabanc\u0131 Dizi izle, T\u00fcm yabanc\u0131 dizilerin yeni ve eski sezonlar\u0131n\u0131 full hd izleyebilece\u011finiz elit site.",
+        "fileSize": 22623,
+        "repositoryUrl": "https://github.com/SafakStream/SafakStream",
+        "language": "tr",
+        "tvTypes": [
+            "TvSeries"
+        ],
+        "iconUrl": "https://www.google.com/s2/favicons?domain=www.dizibox.live&sz=%size%",
+        "apiVersion": 1,
+        "fileHash": "sha256-a64febe1430e7d417f57244e311b38a0a87d580114e3ea2d70bf4b2d2622197e"
+    },
+    {
+        "url": "https://raw.githubusercontent.com/SafakStream/SafakStream/builds/DiziKorea.cs3",
+        "status": 1,
+        "version": 41,
+        "name": "DiziKorea",
+        "internalName": "DiziKorea",
+        "authors": [
+            "keyiflerolsun"
+        ],
+        "description": "En G\u00fcncel Kore Dizileri izleme Sitesi",
+        "fileSize": 23562,
+        "repositoryUrl": "https://github.com/SafakStream/SafakStream",
+        "language": "tr",
+        "tvTypes": [
+            "AsianDrama"
+        ],
+        "iconUrl": "https://www.google.com/s2/favicons?domain=https://dizikorea.vip&sz=%size%",
+        "apiVersion": 1,
+        "fileHash": "sha256-1958c66dd0c32ab436adc333504c1183322653afa048425509a7dfc4898ba0da"
+    },
+    {
+        "url": "https://raw.githubusercontent.com/SafakStream/SafakStream/builds/Dizilla.cs3",
+        "status": 1,
+        "version": 92,
+        "name": "Dizilla",
+        "internalName": "Dizilla",
+        "authors": [
+            "keyiflerolsun"
+        ],
+        "description": "Dizilla t\u00fcm yabanc\u0131 dizileri \u00fccretsiz olarak T\u00fcrk\u00e7e Dublaj ve altyaz\u0131l\u0131 se\u00e7enekleri ile 1080P kalite izleyebilece\u011finiz yeni nesil yabanc\u0131 dizi izleme siteniz.",
+        "fileSize": 36123,
+        "repositoryUrl": "https://github.com/SafakStream/SafakStream",
+        "language": "tr",
+        "tvTypes": [
+            "TvSeries"
+        ],
+        "iconUrl": "https://www.google.com/s2/favicons?domain=dizilla.club&sz=%size%",
+        "apiVersion": 1,
+        "fileHash": "sha256-25a5164a8a92dece1f5993e4ddd7be8399f53c92ebf7448177712fa51b853827"
+    },
+    {
+        "url": "https://raw.githubusercontent.com/SafakStream/SafakStream/builds/DiziMom.cs3",
+        "status": 1,
+        "version": 57,
+        "name": "DiziMom",
+        "internalName": "DiziMom",
+        "authors": [
+            "keyiflerolsun"
+        ],
+        "description": "Binlerce yerli yabanc\u0131 dizi ar\u015fivi, t\u00fcm sezonlar, kesintisiz b\u00f6l\u00fcmler. Sadece dizi izle, Dizimom heryerde seninle!",
+        "fileSize": 34842,
+        "repositoryUrl": "https://github.com/SafakStream/SafakStream",
+        "language": "tr",
+        "tvTypes": [
+            "TvSeries"
+        ],
+        "iconUrl": "https://www.google.com/s2/favicons?domain=www.dizimom.plus&sz=%size%",
+        "apiVersion": 1,
+        "fileHash": "sha256-410707792f79dad393acfd7672ff99a9b83db62827c76a0b60e19b14f0685288"
+    },
+    {
+        "url": "https://raw.githubusercontent.com/SafakStream/SafakStream/builds/DiziPal.cs3",
+        "status": 1,
+        "version": 105,
+        "name": "DiziPal",
+        "internalName": "DiziPal",
+        "authors": [
+            "keyiflerolsun",
+            "muratcesmecioglu"
+        ],
+        "description": "en yeni dizileri g\u00fcvenli ve h\u0131zl\u0131 \u015fekilde sunar.",
+        "fileSize": 29478,
+        "repositoryUrl": "https://github.com/SafakStream/SafakStream",
+        "language": "tr",
+        "tvTypes": [
+            "TvSeries",
+            "Movie"
+        ],
+        "iconUrl": "https://dizipal1563.com/assets/favicon/favicon-32x32.png?v=3",
+        "apiVersion": 1,
+        "fileHash": "sha256-c7136dc0c32ea0f39aff8e3e7c7b54d0814a736acdb06f969051880db116905f"
+    },
+    {
+        "url": "https://raw.githubusercontent.com/SafakStream/SafakStream/builds/DiziPalOriginal.cs3",
+        "status": 1,
+        "version": 85,
+        "name": "DiziPalOriginal",
+        "internalName": "DiziPalOriginal",
+        "authors": [
+            "keyiflerolsun",
+            "muratcesmecioglu"
+        ],
+        "description": "en yeni dizileri g\u00fcvenli ve h\u0131zl\u0131 \u015fekilde sunar.",
+        "fileSize": 25010,
+        "repositoryUrl": "https://github.com/SafakStream/SafakStream",
+        "language": "tr",
+        "tvTypes": [
+            "TvSeries",
+            "Movie"
+        ],
+        "iconUrl": "https://chessplyimages.cfd/uploads/site/favicon-32x32.png",
+        "apiVersion": 1,
+        "fileHash": "sha256-ecfa458d41d6d472cfd1275bc4dac38229f1f8ea49aa24153fb15828edf55630"
+    },
+    {
+        "url": "https://raw.githubusercontent.com/SafakStream/SafakStream/builds/DiziYou.cs3",
+        "status": 1,
+        "version": 25,
+        "name": "DiziYou",
+        "internalName": "DiziYou",
+        "authors": [
+            "keyiflerolsun"
+        ],
+        "description": "Diziyou en kaliteli T\u00fcrk\u00e7e dublaj ve altyaz\u0131l\u0131 yabanc\u0131 dizi izleme sitesidir. G\u00fcncel ve efsanevi dizileri 1080p Full HD kalitede izlemek i\u00e7in hemen t\u0131kla!",
+        "fileSize": 17204,
+        "repositoryUrl": "https://github.com/SafakStream/SafakStream",
+        "language": "tr",
+        "tvTypes": [
+            "TvSeries"
+        ],
+        "iconUrl": "https://cdn.diziyou.one/wp-content/uploads/2020/04/diziyou-favicon.png",
+        "apiVersion": 1,
+        "fileHash": "sha256-6261d0bb203f1870dec0f0e3eab2e6dba9404b36b2e83cef5e653f7bc112e72b"
+    },
+    {
+        "url": "https://raw.githubusercontent.com/SafakStream/SafakStream/builds/FilmMakinesi.cs3",
+        "status": 1,
+        "version": 58,
+        "name": "FilmMakinesi",
+        "internalName": "FilmMakinesi",
+        "authors": [
+            "keyiflerolsun",
+            "usdogu"
+        ],
+        "description": "Film Makinesi, en yeni ve en g\u00fcncel filmleri sitemizde full HD kalite fark\u0131 ile izleyebilirsiniz. HD film izle denildi\u011finde akla gelen en kaliteli film izleme sitesi.",
+        "fileSize": 22836,
+        "repositoryUrl": "https://github.com/SafakStream/SafakStream",
+        "language": "tr",
+        "tvTypes": [
+            "Movie"
+        ],
+        "iconUrl": "https://www.google.com/s2/favicons?domain=filmmakinesi.film&sz=%size%",
+        "apiVersion": 1,
+        "fileHash": "sha256-8c6c51c374449996d68993283bfb7170c9f24b6dafdaadde3958b314453a88ec"
+    },
+    {
+        "url": "https://raw.githubusercontent.com/SafakStream/SafakStream/builds/FilmModu.cs3",
+        "status": 1,
+        "version": 19,
+        "name": "FilmModu",
+        "internalName": "FilmModu",
+        "authors": [
+            "keyiflerolsun"
+        ],
+        "description": "Film modun geldiyse y\u00fcksek kalitede en yeni filmleri izle, 1080p izleyebilece\u011finiz reklamsiz film sitesi.",
+        "fileSize": 16496,
+        "repositoryUrl": "https://github.com/SafakStream/SafakStream",
+        "language": "tr",
+        "tvTypes": [
+            "Movie"
+        ],
+        "iconUrl": "https://www.filmmodu.one/icon/favicon.ico",
+        "apiVersion": 1,
+        "fileHash": "sha256-3150a6212f052ad843a8b9e67d65c82b35078f502bb9f5032b1af808d87b862e"
+    },
+    {
+        "url": "https://raw.githubusercontent.com/SafakStream/SafakStream/builds/FullHDFilmizlesene.cs3",
+        "status": 1,
+        "version": 33,
+        "name": "FullHDFilmizlesene",
+        "internalName": "FullHDFilmizlesene",
+        "authors": [
+            "keyiflerolsun"
+        ],
+        "description": "Sinema zevkini evinize kadar getirdik. T\u00fcrkiye'nin lider Film sitesinde, en yeni filmleri Full HD izleyin.",
+        "fileSize": 40117,
+        "repositoryUrl": "https://github.com/SafakStream/SafakStream",
+        "language": "tr",
+        "tvTypes": [
+            "Movie"
+        ],
+        "iconUrl": "https://www.google.com/s2/favicons?domain=www.fullhdfilmizlesene.de&sz=%size%",
+        "apiVersion": 1,
+        "fileHash": "sha256-8f2cff5f9fc87f38d415b65c30c7ad3b7c9a5d26f03d8e73b072ff520b499253"
+    },
+    {
+        "url": "https://raw.githubusercontent.com/SafakStream/SafakStream/builds/HDFilmCehennemi.cs3",
+        "status": 1,
+        "version": 48,
+        "name": "HDFilmCehennemi",
+        "internalName": "HDFilmCehennemi",
+        "authors": [
+            "hexated",
+            "keyiflerolsun"
+        ],
+        "description": "T\u00fcrkiye'nin en h\u0131zl\u0131 hd film izleme sitesi",
+        "fileSize": 31661,
+        "repositoryUrl": "https://github.com/SafakStream/SafakStream",
+        "language": "tr",
+        "tvTypes": [
+            "Movie",
+            "TvSeries"
+        ],
+        "iconUrl": "https://www.google.com/s2/favicons?domain=hdfilmcehennemi.com&sz=%size%",
+        "apiVersion": 1,
+        "fileHash": "sha256-d3edf0a3cce476d7a5b850950c0fe467102cfacc890da86c5fc39eaecd470c86"
+    },
+    {
+        "url": "https://raw.githubusercontent.com/SafakStream/SafakStream/builds/InatBox.cs3",
+        "status": 1,
+        "version": 30,
+        "name": "InatBox",
+        "internalName": "InatBox",
+        "authors": [
+            "JustRelaxable",
+            "keyiflerolsun"
+        ],
+        "description": "\u0130natBox cloudstream eklentisidir. Sevdi\u011finiz yay\u0131n platformlar\u0131n\u0131 ve canl\u0131 ma\u00e7lar\u0131 burada bulabilirsiniz.",
+        "fileSize": 36900,
+        "repositoryUrl": "https://github.com/SafakStream/SafakStream",
+        "language": "tr",
+        "tvTypes": [
+            "Movie",
+            "TvSeries",
+            "Live"
+        ],
+        "iconUrl": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh3vCp6N1K4bECoYRQD-cisJF2_6V_Hk01ZhDmoPR2JuM8O5qr4MqrPO1munM9cRlleBBSK6odYhLtDBWv4E3vhPhynlmS5hVVtJZShHoGA5REQ8_3v8SIlccTEqzVQu2UJyNYQdJNrKIfWy66RQeT0D-CcmFCbHPz5023H6p2v5fv4NVloZ5Rqo_yGrIY/s320/iNat-Box-App.png",
+        "apiVersion": 1,
+        "fileHash": "sha256-006c7b68f7deb24c5356c753429c20607896f78009a8edbf27a46bd6ff0651fb"
+    },
+    {
+        "url": "https://raw.githubusercontent.com/SafakStream/SafakStream/builds/InternetArchiveProvider.cs3",
+        "status": 1,
+        "version": 1,
+        "name": "InternetArchiveProvider",
+        "internalName": "InternetArchiveProvider",
+        "authors": [
+            "Luna712"
+        ],
+        "description": "Watch content from the Internet Archive at archive.org",
+        "fileSize": 28975,
+        "repositoryUrl": "https://github.com/SafakStream/SafakStream",
+        "tvTypes": [
+            "Others"
+        ],
+        "iconUrl": "https://www.google.com/s2/favicons?domain=archive.org&sz=%size%",
+        "apiVersion": 1,
+        "fileHash": "sha256-e38469a4949fa186c4bf3c8b2ee92c914577f16e00a50d5a9abb06613fdd1c0e",
+        "jarFileSize": 131420,
+        "jarUrl": "https://raw.githubusercontent.com/SafakStream/SafakStream/builds/InternetArchiveProvider.jar",
+        "jarHash": "sha256-33303af3130db096082d79697237d4d3858a72e92bff746d189c53ea364ec914"
+    },
+    {
+        "url": "https://raw.githubusercontent.com/SafakStream/SafakStream/builds/InvidiousProvider.cs3",
+        "status": 1,
+        "version": 9,
+        "name": "InvidiousProvider",
+        "internalName": "InvidiousProvider",
+        "authors": [
+            "Cloudburst"
+        ],
+        "description": "Watch content from any invidious instance",
+        "fileSize": 15310,
+        "repositoryUrl": "https://github.com/SafakStream/SafakStream",
+        "tvTypes": [
+            "Others"
+        ],
+        "iconUrl": "https://www.google.com/s2/favicons?domain=invidious.io&sz=%size%",
+        "apiVersion": 1,
+        "fileHash": "sha256-2ed405baceaac0e34fa31d42e846234edc8044191be8306448dd93822b0b4f27",
+        "jarFileSize": 69074,
+        "jarUrl": "https://raw.githubusercontent.com/SafakStream/SafakStream/builds/InvidiousProvider.jar",
+        "jarHash": "sha256-27cbd39aeae782cda999c2facaa44c7eb4494c24e18b26a693301fb9e9fcbe7f"
+    },
+    {
+        "url": "https://raw.githubusercontent.com/SafakStream/SafakStream/builds/KultFilmler.cs3",
+        "status": 1,
+        "version": 16,
+        "name": "KultFilmler",
+        "internalName": "KultFilmler",
+        "authors": [
+            "keyiflerolsun"
+        ],
+        "description": "K\u00fclt Filmler \u00f6zenle en iyi filmleri derler ve iyi bir altyaz\u0131l\u0131 film izleme deneyimi sunmay\u0131 ama\u00e7lar",
+        "fileSize": 27243,
+        "repositoryUrl": "https://github.com/SafakStream/SafakStream",
+        "language": "tr",
+        "tvTypes": [
+            "Movie",
+            "TvSeries"
+        ],
+        "iconUrl": "https://www.google.com/s2/favicons?domain=kultfilmler.net&sz=%size%",
+        "apiVersion": 1,
+        "fileHash": "sha256-47b263ff6bf1b4f65d17b3aee00112e687de473ce7fd2fd777b17c2ba0290104"
+    },
+    {
+        "url": "https://raw.githubusercontent.com/SafakStream/SafakStream/builds/SinemaCX.cs3",
+        "status": 1,
+        "version": 24,
+        "name": "SinemaCX",
+        "internalName": "SinemaCX",
+        "authors": [
+            "keyiflerolsun"
+        ],
+        "description": "G\u00fcncel ve en iyi yabanc\u0131 filmleri y\u00fcksek g\u00f6r\u00fcnt\u00fc kalitesinde, T\u00fcrk\u00e7e dublaj ve altyaz\u0131 se\u00e7enekleriyle filmleri full izleyin.",
+        "fileSize": 16707,
+        "repositoryUrl": "https://github.com/SafakStream/SafakStream",
+        "language": "tr",
+        "tvTypes": [
+            "Movie"
+        ],
+        "iconUrl": "https://www.google.com/s2/favicons?domain=www.sinema.cx&sz=%size%",
+        "apiVersion": 1,
+        "fileHash": "sha256-a190ac05f8aea8e02626447814c076b6442ed2854794634d07878c2728be06d9"
+    },
+    {
+        "url": "https://raw.githubusercontent.com/SafakStream/SafakStream/builds/Sinewix.cs3",
+        "status": 1,
+        "version": 2,
+        "name": "Sinewix",
+        "internalName": "Sinewix",
+        "authors": [
+            "patr0n",
+            "keyiflerolsun"
+        ],
+        "description": "Sinewix | \u00dccretsiz Film - Dizi - Anime \u0130zleme Uygulamas\u0131",
+        "fileSize": 26760,
+        "repositoryUrl": "https://github.com/SafakStream/SafakStream",
+        "language": "tr",
+        "tvTypes": [
+            "Movie",
+            "TvSeries",
+            "Anime"
+        ],
+        "iconUrl": "https://play-lh.googleusercontent.com/brwGNmr7IjA_MKk_TTPs0va10hdKE_bD_a1lnKoiMuCayW98EHpRv55edA6aEoJlmwfX",
+        "apiVersion": 1,
+        "fileHash": "sha256-b006775c37981e0b7ffd95ef11bc1c5dbf69504cbec8fe5928d8f41b005091f4"
+    },
+    {
+        "url": "https://raw.githubusercontent.com/SafakStream/SafakStream/builds/StreamCenter.cs3",
+        "status": 1,
+        "version": 9,
+        "name": "StreamCenter",
+        "internalName": "StreamCenter",
+        "authors": [
+            "Italiani"
+        ],
+        "description": "Film, Serie TV, Anime e TV in un unico posto.",
+        "fileSize": 1407792,
+        "repositoryUrl": "https://github.com/SafakStream/SafakStream",
+        "language": "it",
+        "tvTypes": [
+            "Movie",
+            "TvSeries",
+            "Anime",
+            "AnimeMovie",
+            "Live"
+        ],
+        "iconUrl": "https://raw.githubusercontent.com/doGior/doGiorsHadEnough/master/StreamCenter/icon.png",
+        "apiVersion": 1,
+        "fileHash": "sha256-1a3fefa11f5f8bccb48b4865071e55fb213953f0f525d5cf94d45e2b79c5ab18"
+    },
+    {
+        "url": "https://raw.githubusercontent.com/SafakStream/SafakStream/builds/Streamed.cs3",
+        "status": 1,
+        "version": 28,
+        "name": "Streamed",
+        "internalName": "Streamed",
+        "authors": [
+            "kraptor"
+        ],
+        "description": "Streamed ile Canl\u0131 Spor Yay\u0131nlar\u0131n\u0131 \u0130zleyebilirsiniz.",
+        "fileSize": 33202,
+        "repositoryUrl": "https://github.com/SafakStream/SafakStream",
+        "language": "en",
+        "tvTypes": [
+            "Live"
+        ],
+        "iconUrl": "https://t2.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://streamed.pk/&size=128",
+        "apiVersion": 1,
+        "fileHash": "sha256-67bfcec060276f7f2339a6a5e9a28021ab69fb39acf416a36824b149c8738c09"
+    },
+    {
+        "url": "https://raw.githubusercontent.com/SafakStream/SafakStream/builds/StreamingCommunity.cs3",
+        "status": 1,
+        "version": 33,
+        "name": "StreamingCommunity",
+        "internalName": "StreamingCommunity",
+        "authors": [
+            "doGior"
+        ],
+        "description": "TV Shows and Movies from StreamingCommunity",
+        "fileSize": 61491,
+        "repositoryUrl": "https://github.com/SafakStream/SafakStream",
+        "language": "it",
+        "tvTypes": [
+            "TvSeries",
+            "Movie",
+            "Documentary",
+            "Cartoon"
+        ],
+        "iconUrl": "https://streamingunity.dog/apple-touch-icon.png?v=2",
+        "apiVersion": 1,
+        "fileHash": "sha256-9e14d2dc2b8aa9a0048891bda1bbc7bc3d7df08a37a1f874df4df444abb20419"
+    },
+    {
+        "url": "https://raw.githubusercontent.com/SafakStream/SafakStream/builds/TLCtr.cs3",
+        "status": 1,
+        "version": 19,
+        "name": "TLCtr",
+        "internalName": "TLCtr",
+        "authors": [
+            "keyiflerolsun"
+        ],
+        "description": "TLC tr",
+        "fileSize": 14282,
+        "repositoryUrl": "https://github.com/SafakStream/SafakStream",
+        "language": "tr",
+        "tvTypes": [
+            "Movie"
+        ],
+        "iconUrl": "https://www.google.com/s2/favicons?domain=www.tlctv.com.tr&sz=%size%",
+        "apiVersion": 1,
+        "fileHash": "sha256-824c09393361fbd6a4f680bb5ed0e4df3de5dc415505313f173bdd2816919b4d"
+    },
+    {
+        "url": "https://raw.githubusercontent.com/SafakStream/SafakStream/builds/TRasyalog.cs3",
+        "status": 1,
+        "version": 65,
+        "name": "TRasyalog",
+        "internalName": "TRasyalog",
+        "authors": [
+            "keyiflerolsun"
+        ],
+        "description": "TRasyalog izleme sitesi.",
+        "fileSize": 15594,
+        "repositoryUrl": "https://github.com/SafakStream/SafakStream",
+        "language": "tr",
+        "tvTypes": [
+            "TvSeries"
+        ],
+        "iconUrl": "https://www.google.com/s2/favicons?domain=asyalog.co&sz=%size%",
+        "apiVersion": 1,
+        "fileHash": "sha256-6d01026fa4978b7642d336924eeb5e1a788e8bd4047be1d3a4d5ae7426764600"
+    },
+    {
+        "url": "https://raw.githubusercontent.com/SafakStream/SafakStream/builds/TV.cs3",
+        "status": 1,
+        "version": 3,
+        "name": "TV",
+        "internalName": "TV",
+        "authors": [
+            "Gian-Fr",
+            "Adippe",
+            "doGior"
+        ],
+        "description": "Live streams from the Free TV github repository. Forked from the Free-TV plugin in the ItalianProvider repo",
+        "fileSize": 29143,
+        "repositoryUrl": "https://github.com/SafakStream/SafakStream",
+        "tvTypes": [
+            "Live"
+        ],
+        "iconUrl": "https://raw.githubusercontent.com/doGior/doGiorsHadEnough/refs/heads/master/TV/television.png",
+        "apiVersion": 1,
+        "fileHash": "sha256-2672f0dc69837b135619741f350a01bf0887046e5b90e43b31eca316bc6ad31c"
+    },
+    {
+        "url": "https://raw.githubusercontent.com/SafakStream/SafakStream/builds/TwitchProvider.cs3",
+        "status": 1,
+        "version": 2,
+        "name": "TwitchProvider",
+        "internalName": "TwitchProvider",
+        "authors": [
+            "CranberrySoup"
+        ],
+        "description": "Watch livestreams from Twitch",
+        "fileSize": 15234,
+        "repositoryUrl": "https://github.com/SafakStream/SafakStream",
+        "tvTypes": [
+            "Live"
+        ],
+        "iconUrl": "https://www.google.com/s2/favicons?domain=twitch.tv&sz=%size%",
+        "apiVersion": 1,
+        "fileHash": "sha256-663cf39ef9599ee538c9f971d007f2e7de5e99cd618b1c6cef3c3fed515a1ef8",
+        "jarFileSize": 56776,
+        "jarUrl": "https://raw.githubusercontent.com/SafakStream/SafakStream/builds/TwitchProvider.jar",
+        "jarHash": "sha256-0b30a4c1df95e59329169b50625033d0548a0a633a44d6e331ad972f9eeea8eb"
+    },
+    {
+        "url": "https://raw.githubusercontent.com/SafakStream/SafakStream/builds/WebdramaTurkey2.cs3",
+        "status": 1,
+        "version": 1,
+        "name": "WebdramaTurkey2",
+        "internalName": "WebdramaTurkey2",
+        "authors": [
+            "patr0n"
+        ],
+        "description": "WebdramaTurkey2 \u0130\u00e7erikleri",
+        "fileSize": 47944,
+        "repositoryUrl": "https://github.com/SafakStream/SafakStream",
+        "language": "tr",
+        "tvTypes": [
+            "AsianDrama",
+            "Movie",
+            "Anime",
+            "Others"
+        ],
+        "iconUrl": "https://www.google.com/s2/favicons?domain=https://webdramaturkey2.com&sz=%size%",
+        "apiVersion": 1,
+        "fileHash": "sha256-ce827d142fd809a36c5e0e0d6db6fa928e8e0e30d90f2cd9042359e2a0b245fb"
+    },
+    {
+        "url": "https://raw.githubusercontent.com/SafakStream/SafakStream/builds/YouTube.cs3",
+        "status": 1,
+        "version": 19,
+        "name": "YouTube",
+        "internalName": "YouTube",
+        "authors": [
+            "doGior"
+        ],
+        "description": "Videos, playlists and channels from YouTube",
+        "fileSize": 40717,
+        "repositoryUrl": "https://github.com/SafakStream/SafakStream",
+        "tvTypes": [
+            "Others"
+        ],
+        "iconUrl": "https://www.youtube.com/s/desktop/711fd789/img/logos/favicon_144x144.png",
+        "apiVersion": 1,
+        "fileHash": "sha256-9b0158ac3986c30ea232d04335da0eb40ea84141952ed538354aae5dc6e62155"
+    }
+]
