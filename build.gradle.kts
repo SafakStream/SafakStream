@@ -14,8 +14,7 @@ buildscript {
 
     dependencies {
         classpath("com.android.tools.build:gradle:8.7.3")
-        // master-SNAPSHOT yerine JitPack'in doğrudan indirdiği çalışan commit:
-        classpath("com.github.recloudstream:gradle:c4ebbe5ce5")
+        classpath("com.github.recloudstream.gradle:gradle:master")
         classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:2.1.0")
     }
 }
