@@ -2,7 +2,7 @@ name: Build
 
 concurrency: 
   group: "build"
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 on:
   workflow_dispatch:
@@ -12,6 +12,9 @@ on:
       - main
     paths-ignore:
       - '*.md'
+
+permissions:
+  contents: write
 
 jobs:
   build:
@@ -45,11 +48,11 @@ jobs:
       - name: Build Plugins
         env:
           ANDROID_HOME: /usr/local/lib/android/sdk
+          GRADLE_OPTS: "-Dorg.gradle.jvmargs=-Xmx4096m -XX:MaxMetaspaceSize=1024m -Dorg.gradle.parallel=true"
         run: |
           cd $GITHUB_WORKSPACE/src
           chmod +x gradlew
-          ./gradlew assembleDebug makePluginsJson --no-daemon
-          ./gradlew ensureJarCompatibility --no-daemon || true
+          ./gradlew makePluginsJson -x ensureJarCompatibility
           mkdir -p $GITHUB_WORKSPACE/builds
           find . -type f \( -name "*.cs3" -o -name "*.jar" \) -exec cp {} $GITHUB_WORKSPACE/builds/ \;
           cp build/plugins.json $GITHUB_WORKSPACE/builds/ || find . -type f -name "plugins.json" -exec cp {} $GITHUB_WORKSPACE/builds/ \;
