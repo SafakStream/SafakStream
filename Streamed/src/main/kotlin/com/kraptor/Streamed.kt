@@ -273,9 +273,10 @@ class Streamed() : MainAPI() {
 
             Log.d("Ayzen", "${match.title} ${match.sources?.size ?: 0}")
 
-            fun viewersOf(s: Stream): Int {
+fun viewersOf(s: Stream): Int {
                 return try {
-                    when (val v = s.viewers) {
+                    val v = s.viewers as Any?
+                    when (v) {
                         is Number -> v.toInt()
                         is String -> v.toIntOrNull() ?: 0
                         else -> 0
