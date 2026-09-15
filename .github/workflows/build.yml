@@ -48,11 +48,12 @@ jobs:
         run: |
           cd $GITHUB_WORKSPACE/src
           chmod +x gradlew
-          ./gradlew make makePluginsJson
-          ./gradlew ensureJarCompatibility
-          cp **/build/*.cs3 $GITHUB_WORKSPACE/builds/ || true
-          cp **/build/*.jar $GITHUB_WORKSPACE/builds/ || true
-          cp build/plugins.json $GITHUB_WORKSPACE/builds/
+          ./gradlew assembleDebug --no-daemon
+          ./gradlew make makePluginsJson --no-daemon
+          ./gradlew ensureJarCompatibility --no-daemon || true
+          cp -r **/build/*.cs3 $GITHUB_WORKSPACE/builds/ || true
+          cp -r **/build/*.jar $GITHUB_WORKSPACE/builds/ || true
+          cp -r build/plugins.json $GITHUB_WORKSPACE/builds/ || true
 
       - name: Push builds
         run: |
