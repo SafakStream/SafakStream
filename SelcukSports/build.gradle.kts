@@ -1,13 +1,5 @@
 version = 12
 
-android {
-    sourceSets {
-        getByName("main") {
-            java.srcDirs("src/main/java")
-        }
-    }
-}
-
 cloudstream {
     authors     = listOf("SafakStream")
     language    = "tr"
