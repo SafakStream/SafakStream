@@ -713,25 +713,5 @@
   "pluginUrl": "https://raw.githubusercontent.com/SafakStream/SafakStream/builds/CNCVerse.cs3",
   "fileSize": 104474,
   "fileHash": "sha256-32ca70063d26ab8d49680798ac6bdeb4686ca82f994bb39350b45c024bf3db9a"
-},
-    {
-        "iconUrl": "https://raw.githubusercontent.com/SafakStream/SafakStream/builds/icons/cropped-cricfytv-2.png",
-        "fileHash": "sha256-a607df6667da87512caf869220b8bf7a081a0550217d309d4124e9ac5d2a2547",
-        "apiVersion": 1,
-        "repositoryUrl": "https://github.com/SafakStream/SafakStream",
-        "fileSize": 102189,
-        "status": 1,
-        "language": "ta",
-        "authors": [
-            "SafakStream"
-        ],
-        "tvTypes": [
-            "Live"
-        ],
-        "version": 66,
-        "internalName": "CricifyProvider",
-        "description": "Watch Live sports and TV channels [SafakStream]",
-        "url": "https://raw.githubusercontent.com/SafakStream/SafakStream/builds/CricifyProvider.cs3",
-        "name": "CricifyProvider [SafakStream]"
-    }
+}
 ]
