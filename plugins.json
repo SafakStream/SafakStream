@@ -704,7 +704,7 @@
             "SafakStream"
         ],
         "description": "Netflix, PrimeVideo, Disney+ Hotstar Contents in Multiple Languages",
-        "fileSize": 97449,
+        "fileSize": 97448,
         "repositoryUrl": "https://github.com/SafakStream/SafakStream",
         "language": "all",
         "tvTypes": [
@@ -713,6 +713,6 @@
         ],
         "iconUrl": "https://raw.githubusercontent.com/SafakStream/SafakStream/builds/icons/logo.jpeg",
         "apiVersion": 1,
-        "fileHash": "sha256-bb2fad9be3f959a9f07a3f959a4ba4830b768cc2911e827315cda13a00a51e98"
+        "fileHash": "sha256-e213430b72d04a3d6753a0d6adff47a340cb32f2296bcae9d3969918e0c5e894"
     }
 ]
