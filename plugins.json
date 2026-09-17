@@ -647,5 +647,26 @@
     "iconUrl": "https://raw.githubusercontent.com/SafakStream/SafakStream/builds/icons/AslanTV.png",
     "apiVersion": 1,
     "fileHash": "sha256-e25514a9554a577102c40acffe82b602383590faf9ec61fb74f59313786ae2e0"
-}
+},
+    {
+        "url": "https://raw.githubusercontent.com/SafakStream/SafakStream/builds/CinemaCity.cs3",
+        "status": 1,
+        "version": 25,
+        "name": "CinemaCity • SafakStream",
+        "internalName": "Cinemacity",
+        "authors": [
+            "SafakStream"
+        ],
+        "description": "Watch Movies & TvSeries (Multi-Lang/Audio)",
+        "fileSize": 95820,
+        "repositoryUrl": "https://github.com/SafakStream/SafakStream",
+        "language": "en",
+        "tvTypes": [
+            "Movie",
+            "TvSeries"
+        ],
+        "iconUrl": "https://raw.githubusercontent.com/SafakStream/SafakStream/builds/icons/faviconV2.png",
+        "apiVersion": 1,
+        "fileHash": "sha256-b90bf3613c3f28e341a89818bfe9a04c0ab23ef06a96e03ce4ce3afd10699eb9"
+    }
 ]
