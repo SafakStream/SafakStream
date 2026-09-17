@@ -668,5 +668,28 @@
         "iconUrl": "https://raw.githubusercontent.com/SafakStream/SafakStream/builds/icons/faviconV2.png",
         "apiVersion": 1,
         "fileHash": "sha256-fcba1c412fc42ac26007a54daa6790a918253796e0b608bcd089286399be32dd"
-    }
+    },
+    {
+  "url": "https://raw.githubusercontent.com/SafakStream/SafakStream/builds/ClipBox.cs3",
+  "status": 1,
+  "version": 8,
+  "name": "ClipBox • SafakStream",
+  "internalName": "ClipBox",
+  "authors": [
+    "SafakStream"
+  ],
+  "description": "Clip Box · SafakStream sağlayıcı paketi",
+  "fileSize": 749254,
+  "repositoryUrl": "https://github.com/SafakStream/SafakStream",
+  "language": "tr",
+  "tvTypes": [
+    "Movie",
+    "TvSeries",
+    "Anime",
+    "Documentary"
+  ],
+  "iconUrl": "https://raw.githubusercontent.com/SafakStream/SafakStream/builds/icons/faviconV2.png",
+  "apiVersion": 1,
+  "fileHash": "sha256-29c86e8e64f30c3a7cf8348803d6dd7de073eeed3849471ae5a190881c70b726"
+}
 ]
