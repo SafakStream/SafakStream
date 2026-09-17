@@ -591,5 +591,61 @@
         "description": "Videos, playlists and channels from YouTube",
         "url": "https://raw.githubusercontent.com/SafakStream/SafakStream/builds/YouTube.cs3",
         "name": "YouTube"
-    }
+    },
+    {
+    "url": "https://raw.githubusercontent.com/SafakStream/SafakStream/builds/SelcukSports.cs3",
+    "status": 3,
+    "version": 16,
+    "name": "SelçukSports • SafakStream",
+    "internalName": "SelcukSports",
+    "authors": [
+      "SafakStream"
+    ],
+    "description": "🟢 Canlı spor yayınları ve maç özetleri izle.",
+    "repositoryUrl": "https://github.com/SafakStream/SafakStream",
+    "language": "tr",
+    "tvTypes": [
+      "Live"
+    ],
+    "iconUrl": "https://raw.githubusercontent.com/SafakStream/SafakStream/builds/icons/SelcukSports.png",
+    "apiVersion": 1
+  },
+{
+    "url": "https://raw.githubusercontent.com/SafakStream/SafakStream/builds/BeyazElma.cs3",
+    "status": 3,
+    "version": 12,
+    "name": "BeyazElma • SafakStream",
+    "internalName": "BeyazElma",
+    "authors": [
+        "SafakStream"
+    ],
+    "description": "🟢 Kaynak: BeyazElma · Emeği için teşekkürler ♥",
+    "repositoryUrl": "https://github.com/SafakStream/SafakStream",
+    "language": "tr",
+    "tvTypes": [
+        "Live"
+    ],
+    "iconUrl": "https://raw.githubusercontent.com/SafakStream/SafakStream/builds/icons/BeyazElma.png",
+    "apiVersion": 1
+},
+    {
+    "url": "https://raw.githubusercontent.com/SafakStream/SafakStream/builds/AslanTV.cs3",
+    "status": 3,
+    "version": 13,
+    "name": "Aslan TV • SafakStream",
+    "internalName": "AslanTV",
+    "authors": [
+        "SafakStream"
+    ],
+    "description": "🟢 Kaynak: Aslan TV · Mod: SafakStream · WARP gerekebilir.",
+    "fileSize": 179322,
+    "repositoryUrl": "https://github.com/SafakStream/SafakStream",
+    "language": "tr",
+    "tvTypes": [
+        "Live"
+    ],
+    "iconUrl": "https://raw.githubusercontent.com/SafakStream/SafakStream/builds/icons/AslanTV.png",
+    "apiVersion": 1,
+    "fileHash": "sha256-e25514a9554a577102c40acffe82b602383590faf9ec61fb74f59313786ae2e0"
+}
 ]
