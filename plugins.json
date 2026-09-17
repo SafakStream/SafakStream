@@ -735,9 +735,9 @@
     "name": "Cricify • SafakStream"
 },
     {
-  "url": "https://raw.githubusercontent.com/SafakStream/SafakStream/builds/DiziFilmIzle.cs3?v=14",
-  "status": 3,
-  "version": 14,
+  "url": "https://raw.githubusercontent.com/SafakStream/SafakStream/builds/DiziFilmIzle.cs3?v=15",
+  "status": 1,
+  "version": 15,
   "name": "DiziFilmİzle • SafakStream",
   "internalName": "DiziFilmIzle",
   "authors": [
@@ -755,6 +755,6 @@
   ],
   "iconUrl": "https://raw.githubusercontent.com/SafakStream/SafakStream/builds/icons/DiziFilmIzle.jpg",
   "apiVersion": 1,
-  "fileHash": "sha256-279ab6f4f82fc5bf64ad341b126b7ecd9196c1e14cac7ff6253704eb92dd23b2"
+  "fileHash": "sha256-8760a3fac41bcc218e8ef0492ec671219fd0cc5243192fd27831db7a6ed5da6c"
 }
 ]
