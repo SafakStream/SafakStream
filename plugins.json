@@ -737,14 +737,14 @@
     {
   "url": "https://raw.githubusercontent.com/SafakStream/SafakStream/builds/DiziFilmIzle.cs3",
   "status": 3,
-  "version": 9,
+  "version": 10,
   "name": "DiziFilmİzle • SafakStream",
   "internalName": "DiziFilmIzle",
   "authors": [
     "SafakStream"
   ],
   "description": "Dizi ve filmleri Türkçe altyazı ve dublaj seçenekleriyle izleyin.",
-  "fileSize": 57555,
+  "fileSize": 57739,
   "repositoryUrl": "https://github.com/SafakStream/SafakStream",
   "language": "tr",
   "tvTypes": [
@@ -753,8 +753,8 @@
     "Anime",
     "Documentary"
   ],
-  "iconUrl": "https://raw.githubusercontent.com/SafakStream/SafakStream/builds/icons/DiziFilmIzle.jpg",
+  "iconUrl": "https://raw.githubusercontent.com/SafakStream/SafakStream/builds/icons/DiziFilmIzle.png",
   "apiVersion": 1,
-  "fileHash": "sha256-780de7f853da57f0e2d4b292347e52d024d502ac0e44b1e92c97c414a9c32c48"
+  "fileHash": "sha256-19827043970b925126956d1ef0de16736b6cc0b7e349bc45abd6642725a587e1"
 }
 ]
