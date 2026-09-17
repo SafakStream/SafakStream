@@ -692,5 +692,26 @@
   "iconUrl": "https://raw.githubusercontent.com/SafakStream/SafakStream/builds/icons/faviconV2.png",
   "apiVersion": 1,
   "fileHash": "sha256-926eea8e3cfc85963cf2b25cacad2baf5f7776a9040538dd672145ddf5929caa"
-}
+},
+    {
+        "url": "https://raw.githubusercontent.com/SafakStream/SafakStream/builds/CNC%20Verse.cs3",
+        "status": 1,
+        "version": 109,
+        "name": "CNC Verse",
+        "internalName": "CNC Verse",
+        "authors": [
+            "SafakStream"
+        ],
+        "description": "Netflix, PrimeVideo, Disney+ Hotstar Contents in Multiple Languages",
+        "fileSize": 95022,
+        "repositoryUrl": "https://github.com/SafakStream/SafakStream",
+        "language": "all",
+        "tvTypes": [
+            "Movie",
+            "TvSeries"
+        ],
+        "iconUrl": "https://raw.githubusercontent.com/SafakStream/SafakStream/builds/icons/logo.jpeg",
+        "apiVersion": 1,
+        "fileHash": "sha256-beffc2cb403031595db45d87278801c5ce5233843f13bfeaf967e3ce1a78fbbf"
+    }
 ]
