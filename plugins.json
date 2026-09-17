@@ -716,10 +716,10 @@
 },
     {
         "iconUrl": "https://raw.githubusercontent.com/SafakStream/SafakStream/builds/icons/cropped-cricfytv-2.png",
-        "fileHash": "sha256-6eb4a9d6665dbccd9d803ddc523b7a1e9e5d9a7b1708ee06ae952d122268ca96",
+        "fileHash": "sha256-a0c359479f73add0463649e758f408aed3061934ddbdf0d2dff322f512da4b41",
         "apiVersion": 1,
         "repositoryUrl": "https://github.com/SafakStream/SafakStream",
-        "fileSize": 99562,
+        "fileSize": 102168,
         "status": 1,
         "language": "ta",
         "authors": [
