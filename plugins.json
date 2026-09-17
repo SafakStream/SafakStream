@@ -733,28 +733,5 @@
     "description": "Watch Live sports and TV channels",
     "url": "https://raw.githubusercontent.com/SafakStream/SafakStream/builds/CricifyProvider.cs3",
     "name": "Cricify • SafakStream"
-},
-    {
-  "url": "https://raw.githubusercontent.com/SafakStream/SafakStream/builds/DiziFilmIzle.cs3?v=15",
-  "status": 1,
-  "version": 15,
-  "name": "DiziFilmİzle • SafakStream",
-  "internalName": "DiziFilmIzle",
-  "authors": [
-    "SafakStream"
-  ],
-  "description": "Dizi ve filmleri Türkçe altyazı ve dublaj seçenekleriyle izleyin.",
-  "fileSize": 58040,
-  "repositoryUrl": "https://github.com/SafakStream/SafakStream",
-  "language": "tr",
-  "tvTypes": [
-    "Movie",
-    "TvSeries",
-    "Anime",
-    "Documentary"
-  ],
-  "iconUrl": "https://raw.githubusercontent.com/SafakStream/SafakStream/builds/icons/DiziFilmIzle.jpg",
-  "apiVersion": 1,
-  "fileHash": "sha256-8760a3fac41bcc218e8ef0492ec671219fd0cc5243192fd27831db7a6ed5da6c"
 }
 ]
