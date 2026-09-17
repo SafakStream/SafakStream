@@ -744,7 +744,7 @@
     "SafakStream"
   ],
   "description": "Dizi Mom · SafakStream eklenti paketi",
-  "fileSize": 47667,
+  "fileSize": 47786,
   "repositoryUrl": "https://github.com/SafakStream/SafakStream",
   "language": "tr",
   "tvTypes": [
@@ -755,6 +755,6 @@
   ],
   "iconUrl": "https://raw.githubusercontent.com/SafakStream/SafakStream/builds/icons/DiziMom.png",
   "apiVersion": 1,
-  "fileHash": "sha256-577a55682041adf902bb10bc2e201884d58b5c88f498fe5e48d0537bcf85a06d"
+  "fileHash": "sha256-4a0a7fbe99fb4df126f3dd297d95e3d6bd85602d3f82743cf3d7b637b624afa0"
 }
 ]
