@@ -675,11 +675,12 @@
   "version": 8,
   "name": "ClipBox • SafakStream",
   "internalName": "ClipBox",
+  "pluginClassName": "dev.wiojelt.turksinema.entry.ClipBoxEntry",
   "authors": [
     "SafakStream"
   ],
   "description": "Clip Box · SafakStream sağlayıcı paketi",
-  "fileSize": 749294,
+  "fileSize": 749310,
   "repositoryUrl": "https://safakstream.github.io/SafakStream/",
   "language": "tr",
   "tvTypes": [
@@ -690,6 +691,6 @@
   ],
   "iconUrl": "https://raw.githubusercontent.com/SafakStream/SafakStream/builds/icons/faviconV2.png",
   "apiVersion": 1,
-  "fileHash": "sha256-51bb638f7c74cd9f021a323a594d41a0380e6d2ded14868f0b1cf2bbc7fcb4b6"
+  "fileHash": "sha256-d814e1eb1709d46370ced7442d869fde75e8a74297e2af0864dbd5f44da878ad"
 }
 ]
