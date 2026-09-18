@@ -760,14 +760,14 @@
     {
   "url": "https://raw.githubusercontent.com/SafakStream/SafakStream/builds/DomatesTV.cs3",
   "status": 3,
-  "version": 6,
+  "version": 7,
   "name": "DomatesTV",
   "internalName": "DomatesTV",
   "authors": [
     "SafakStream"
   ],
   "description": "Domates TV dinamik spor kanalları · SafakStream",
-  "fileSize": 91679,
+  "fileSize": 91329,
   "repositoryUrl": "https://github.com/SafakStream/SafakStream",
   "language": "tr",
   "tvTypes": [
@@ -775,6 +775,6 @@
   ],
   "iconUrl": "https://raw.githubusercontent.com/SafakStream/SafakStream/builds/icons/DomatesTV.webp",
   "apiVersion": 1,
-  "fileHash": "sha256-fa719349f86f53a55e4390af6a8a1e3fed397ef0603f08ebced0bfa26bc67b6a"
+  "fileHash": "sha256-5d33745974d3f8b08ef4fc2c9529cee31d7547d2028f0b26fe1a031e29e50da6"
 }
 ]
