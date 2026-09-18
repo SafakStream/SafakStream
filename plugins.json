@@ -869,7 +869,7 @@
     "SafakStream"
   ],
   "description": "JestYayin canlı maçlar ve spor kanalları · SafakStream",
-  "fileSize": 141578,
+  "fileSize": 141623,
   "repositoryUrl": "https://github.com/SafakStream/SafakStream",
   "language": "tr",
   "tvTypes": [
@@ -877,6 +877,6 @@
   ],
   "iconUrl": "https://raw.githubusercontent.com/SafakStream/SafakStream/builds/icons/JestYayin.png",
   "apiVersion": 1,
-  "fileHash": "sha256-0f5086b7583e8b8143bd06399f0fa42e029d08e1a49c1c4416bee6e31883d21c"
+  "fileHash": "sha256-88f1ed36632136af47eb6fde56a0cf480e2e6a6313d82a9f3c42265aa698eb77"
 }
 ]
