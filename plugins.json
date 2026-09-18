@@ -798,26 +798,6 @@
   "fileHash": "sha256-03606fb2a19910f7a48221567e87aaa79871add64de7b8fe6c557dae62a8838b"
 },
     {
-  "url": "https://raw.githubusercontent.com/SafakStream/SafakStream/builds/GolgeTV.cs3",
-  "status": 1,
-  "version": 5,
-  "name": "GolgeTV",
-  "internalName": "GolgeTV",
-  "authors": [
-    "SafakStream"
-  ],
-  "description": "GölgeTV spor kanalları ve alternatif yayınlar · SafakStream",
-  "fileSize": 145753,
-  "repositoryUrl": "https://github.com/SafakStream/SafakStream",
-  "language": "tr",
-  "tvTypes": [
-    "Live"
-  ],
-  "iconUrl": "https://raw.githubusercontent.com/SafakStream/SafakStream/builds/icons/golgetv.jpg",
-  "apiVersion": 1,
-  "fileHash": "sha256-4738c788d2746e6c53839b05676fb433eb6dbd1b5567ac6dc6917ed8f93d1c87"
-},
-    {
   "url": "https://raw.githubusercontent.com/SafakStream/SafakStream/builds/InatBox.cs3",
   "status": 3,
   "version": 17,
