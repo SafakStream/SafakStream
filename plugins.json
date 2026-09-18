@@ -840,23 +840,23 @@
   "fileHash": "sha256-dc351687937ba30fffd68160ce59dd945ee950b590fff131cd529179a538c02e"
 },
     {
-  "url": "https://raw.githubusercontent.com/SafakStream/SafakStream/builds/InatTV.cs3",
+  "url": "https://raw.githubusercontent.com/SafakStream/SafakStream/builds/GolgeTV.cs3",
   "status": 3,
-  "version": 11,
-  "name": "InatTV",
-  "internalName": "InatTV",
+  "version": 12,
+  "name": "GölgeTV",
+  "internalName": "GolgeTVProvider",
   "authors": [
     "SafakStream"
   ],
-  "description": "İnat TV dinamik canlı yayınlar · SafakStream",
-  "fileSize": 104019,
+  "description": "Gölge TV spor ve canlı yayınlar · SafakStream",
+  "fileSize": 143846,
   "repositoryUrl": "https://github.com/SafakStream/SafakStream",
   "language": "tr",
   "tvTypes": [
     "Live"
   ],
-  "iconUrl": "https://raw.githubusercontent.com/SafakStream/SafakStream/builds/icons/InatTV.png",
+  "iconUrl": "https://raw.githubusercontent.com/SafakStream/SafakStream/builds/icons/GolgeTV.png",
   "apiVersion": 1,
-  "fileHash": "sha256-57fc6933214f6183363f9a3a413bb56bda0ae0f1f96f95000d0d60a78f65bc70"
+  "fileHash": "sha256-138f3f1cc2d8d4cc51423bf0ac08f114ad195c1ab7d991ac1ecadeb9abe3d120"
 }
 ]
