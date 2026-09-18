@@ -838,5 +838,25 @@
   "iconUrl": "https://raw.githubusercontent.com/SafakStream/SafakStream/builds/icons/InatBox.webp",
   "apiVersion": 1,
   "fileHash": "sha256-dc351687937ba30fffd68160ce59dd945ee950b590fff131cd529179a538c02e"
+},
+    {
+  "url": "https://raw.githubusercontent.com/SafakStream/SafakStream/builds/InatTV.cs3",
+  "status": 3,
+  "version": 11,
+  "name": "InatTV",
+  "internalName": "InatTV",
+  "authors": [
+    "SafakStream"
+  ],
+  "description": "🟢 Kaynak: İnat TV · SafakStream Derlemesi ♥",
+  "fileSize": 103984,
+  "repositoryUrl": "https://github.com/SafakStream/SafakStream",
+  "language": "tr",
+  "tvTypes": [
+    "Live"
+  ],
+  "iconUrl": "https://raw.githubusercontent.com/SafakStream/SafakStream/builds/icons/InatTV.png",
+  "apiVersion": 1,
+  "fileHash": "sha256-d4ebae0c83e8a53a60e0bd5e0e98bdaf60edd9af7d97ab4e789ee09ae7a9cd9d"
 }
 ]
