@@ -816,5 +816,27 @@
   "iconUrl": "https://raw.githubusercontent.com/SafakStream/SafakStream/builds/icons/golgetv.jpg",
   "apiVersion": 1,
   "fileHash": "sha256-7b3d0d1e28953acd9e4ef8e7c157f8c71e0d61a29bb5939cf86f19f3da394600"
+},
+    {
+  "url": "https://raw.githubusercontent.com/SafakStream/SafakStream/builds/InatBox.cs3",
+  "status": 3,
+  "version": 17,
+  "name": "InatBox",
+  "internalName": "InatBox",
+  "authors": [
+    "SafakStream"
+  ],
+  "description": "🟢 Kaynak: İnat Box · SafakStream Derlemesi ♥",
+  "fileSize": 183925,
+  "repositoryUrl": "https://github.com/SafakStream/SafakStream",
+  "language": "tr",
+  "tvTypes": [
+    "Movie",
+    "TvSeries",
+    "Live"
+  ],
+  "iconUrl": "https://raw.githubusercontent.com/SafakStream/SafakStream/builds/icons/InatBox.webp",
+  "apiVersion": 1,
+  "fileHash": "sha256-14583da9dc50d6fe6dcecdea5585155c6f7c8155d27dc4e20ee5ffe2d6975835"
 }
 ]
