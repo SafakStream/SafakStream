@@ -756,5 +756,25 @@
   "iconUrl": "https://raw.githubusercontent.com/SafakStream/SafakStream/builds/icons/DiziMom.png",
   "apiVersion": 1,
   "fileHash": "sha256-1cfa3be33c172fd0209917219bbb53c49be97cb959c75e62b70e27b880f35a62"
+},
+    {
+  "url": "https://raw.githubusercontent.com/SafakStream/SafakStream/builds/DomatesTV.cs3",
+  "status": 3,
+  "version": 5,
+  "name": "DomatesTV",
+  "internalName": "DomatesTV",
+  "authors": [
+    "SafakStream"
+  ],
+  "description": "Domates TV dinamik spor kanalları · SafakStream",
+  "fileSize": 91686,
+  "repositoryUrl": "https://github.com/SafakStream/SafakStream",
+  "language": "tr",
+  "tvTypes": [
+    "Live"
+  ],
+  "iconUrl": "https://raw.githubusercontent.com/SafakStream/SafakStream/builds/icons/DomatesTV.webp",
+  "apiVersion": 1,
+  "fileHash": "sha256-0a4e1aabb4695a6c605bb659c663a09c3d2e30eccde978fbee958d9dc2d20a70"
 }
 ]
