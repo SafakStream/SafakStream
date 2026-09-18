@@ -858,5 +858,25 @@
   "iconUrl": "https://raw.githubusercontent.com/SafakStream/SafakStream/builds/icons/InatTV.png",
   "apiVersion": 1,
   "fileHash": "sha256-57fc6933214f6183363f9a3a413bb56bda0ae0f1f96f95000d0d60a78f65bc70"
+},
+    {
+  "url": "https://raw.githubusercontent.com/SafakStream/SafakStream/builds/JestYayin.cs3",
+  "status": 3,
+  "version": 4,
+  "name": "JestYayin",
+  "internalName": "JestYayin",
+  "authors": [
+    "SafakStream"
+  ],
+  "description": "JestYayin canlı maçlar ve spor kanalları · SafakStream",
+  "fileSize": 141561,
+  "repositoryUrl": "https://github.com/SafakStream/SafakStream",
+  "language": "tr",
+  "tvTypes": [
+    "Live"
+  ],
+  "iconUrl": "https://raw.githubusercontent.com/SafakStream/SafakStream/builds/icons/JestYayin.png",
+  "apiVersion": 1,
+  "fileHash": "sha256-3c79cee5ecd91b10e2fde9598439db243bb569b8d0018f55bf6a3c0b55d50236"
 }
 ]
