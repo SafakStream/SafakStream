@@ -787,7 +787,7 @@
     "SafakStream"
   ],
   "description": "Domino TV dinamik spor kanalları · SafakStream",
-  "fileSize": 91988,
+  "fileSize": 92020,
   "repositoryUrl": "https://github.com/SafakStream/SafakStream",
   "language": "tr",
   "tvTypes": [
@@ -795,6 +795,6 @@
   ],
   "iconUrl": "https://raw.githubusercontent.com/SafakStream/SafakStream/builds/icons/DominoTV.png",
   "apiVersion": 1,
-  "fileHash": "sha256-fe0715611efb4e9e54450ff63751aea4cfd9a06f8686b72bc5be903c8f795449"
+  "fileHash": "sha256-8eea57547ef1fad42354ec70f036a91009b880059bfce52a3cf79ebc790b8a1e"
 }
 ]
