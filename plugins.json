@@ -822,14 +822,14 @@
         {
       "url": "https://raw.githubusercontent.com/SafakStream/SafakStream/builds/InatTV.cs3",
       "status": 3,
-      "version": 11,
-      "name": "InatTV",
+      "version": 12,
+      "name": "İnat TV",
       "internalName": "InatTV",
       "authors": [
         "SafakStream"
       ],
       "description": "İnat TV dinamik canlı yayınlar · SafakStream",
-      "fileSize": 104019,
+      "fileSize": 103988,
       "repositoryUrl": "https://github.com/SafakStream/SafakStream",
       "language": "tr",
       "tvTypes": [
@@ -837,6 +837,6 @@
       ],
       "iconUrl": "https://raw.githubusercontent.com/SafakStream/SafakStream/builds/icons/InatTV.png",
       "apiVersion": 1,
-      "fileHash": "sha256-57fc6933214f6183363f9a3a413bb56bda0ae0f1f96f95000d0d60a78f65bc70"
+      "fileHash": "sha256-8b9742b115a153ae8e18de8e50be544cda0fa8a597182ea9ef54dfe07dbac59d"
     }
 ]
