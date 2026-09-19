@@ -842,14 +842,14 @@
     {
   "url": "https://raw.githubusercontent.com/SafakStream/SafakStream/builds/MahsunSports.cs3",
   "status": 3,
-  "version": 11,
+  "version": 12,
   "name": "MahsunSports",
   "internalName": "MahsunSports",
   "authors": [
     "SafakStream"
   ],
   "description": "🟢 Kaynak: MahsunSports · SafakStream · @SafakStream",
-  "fileSize": 105362,
+  "fileSize": 105352,
   "repositoryUrl": "https://github.com/SafakStream/SafakStream",
   "language": "tr",
   "tvTypes": [
@@ -857,6 +857,6 @@
   ],
   "iconUrl": "https://raw.githubusercontent.com/SafakStream/SafakStream/builds/icons/MahsunSports.jpg",
   "apiVersion": 1,
-  "fileHash": "sha256-eaf5b7120d88e46029d737deb01f1bdb738c81056c82ff14ddf29765af3cedce"
+  "fileHash": "sha256-b91935a464a2b1994ba52ffd779ce91cdc91b665bfeeee0d430c8166f8af4ebf"
 }
 ]
