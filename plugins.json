@@ -838,5 +838,25 @@
       "iconUrl": "https://raw.githubusercontent.com/SafakStream/SafakStream/builds/icons/InatTV.png",
       "apiVersion": 1,
       "fileHash": "sha256-aaa9b6f79bb2039858d9e70d6e83a0dcf9ebd441fa95c6e443153d1547ddac4f"
-    }
+    },
+    {
+  "url": "https://raw.githubusercontent.com/SafakStream/SafakStream/builds/MahsunSports.cs3",
+  "status": 3,
+  "version": 10,
+  "name": "MahsunSports",
+  "internalName": "MahsunSports",
+  "authors": [
+    "SafakStream"
+  ],
+  "description": "🟢 Kaynak: MahsunSports · SafakStream · @SafakStream",
+  "fileSize": 105817,
+  "repositoryUrl": "https://github.com/SafakStream/SafakStream",
+  "language": "tr",
+  "tvTypes": [
+    "Live"
+  ],
+  "iconUrl": "https://raw.githubusercontent.com/SafakStream/SafakStream/builds/icons/MahsunSports.png",
+  "apiVersion": 1,
+  "fileHash": "sha256-3141fd574e644a9c7262c81cc4a07f16edef60b7ef294f0c96c0f890a3ce86bd"
+}
 ]
