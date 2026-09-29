@@ -1,0 +1,175 @@
+[
+  {
+  "iconUrl": "https://raw.githubusercontent.com/SafakStream/SafakStream/builds/icons/canlitv.png",
+  "fileHash": "sha256-a0bcad8dd3755581f2f7d791f9db7934ba9ed5e0e63df4810fa7d177b2255fee",
+  "apiVersion": 1,
+  "repositoryUrl": "https://github.com/SafakStream/SafakStream",
+  "fileSize": 20266,
+  "status": 1,
+  "language": "tr",
+  "authors": [
+    "SafakStream"
+  ],
+  "tvTypes": [
+    "Live"
+  ],
+  "version": 1,
+  "pluginClassName": "com.safakstream.canlitv.CanliTVPlugin",
+  "internalName": "CanliTV",
+  "description": "SafakStream Canlı TV Eklentisi",
+  "url": "https://raw.githubusercontent.com/SafakStream/SafakStream/builds/CanliTV.cs3",
+  "name": "CanliTV"
+},
+  {
+  "iconUrl": "https://raw.githubusercontent.com/SafakStream/SafakStream/builds/icons/cinestream.png",
+  "fileHash": "sha256-00c2f0c303fb0d4212424ac70ed69c2beba8600dbc389e3fe678e6e8c3588971",
+  "apiVersion": 1,
+  "repositoryUrl": "https://github.com/SafakStream/SafakStream",
+  "fileSize": 690281,
+  "status": 1,
+  "language": "en",
+  "authors": [
+    "SafakStream"
+  ],
+  "tvTypes": [
+    "TvSeries",
+    "Movie",
+    "AsianDrama",
+    "Anime",
+    "Torrent"
+  ],
+  "version": 1,
+  "internalName": "CineStream",
+  "description": "SafakStream CineStream eklentisi.",
+  "url": "https://raw.githubusercontent.com/SafakStream/SafakStream/builds/CineStream.cs3",
+  "name": "CineStream"
+},
+  {
+  "url": "https://raw.githubusercontent.com/SafakStream/SafakStream/builds/Cinemacity.cs3",
+  "status": 1,
+  "version": 1,
+  "name": "Cinemacity",
+  "internalName": "Cinemacity",
+  "authors": [
+    "SafakStream"
+  ],
+  "description": "Filmleri ve Dizileri İzleyin",
+  "fileSize": 106812,
+  "repositoryUrl": "https://github.com/SafakStream/SafakStream",
+  "language": "tr",
+  "tvTypes": [
+    "Movie",
+    "TvSeries"
+  ],
+  "iconUrl": "https://raw.githubusercontent.com/SafakStream/SafakStream/builds/icons/cinemacity.png",
+  "apiVersion": 1,
+  "fileHash": "sha256-be250125f7ccbcb5ee52650c307998aa5db55805dcfd9807846049d1fb9ae59a"
+},
+  {
+    "name": "DiziKorea",
+    "internalName": "DiziKorea",
+    "pluginClassName": "com.safakstream.dizikorea.DiziKoreaPlugin",
+    "description": "En Güncel Kore Dizileri izleme Sitesi",
+    "authors": [
+      "SafakStream"
+    ],
+    "version": 1,
+    "apiVersion": 1,
+    "status": 1,
+    "language": "tr",
+    "tvTypes": [
+      "AsianDrama"
+    ],
+    "iconUrl": "https://raw.githubusercontent.com/SafakStream/SafakStream/builds/icons/dizikorea.png",
+    "url": "https://raw.githubusercontent.com/SafakStream/SafakStream/builds/DiziKorea.cs3",
+    "repositoryUrl": "https://github.com/SafakStream/SafakStream",
+    "fileHash": "sha256-061fa6d0ab1f0958073a7796e981a6431c7f7ec9939c6595bc5d7b8e4d3fe698",
+    "fileSize": 23254
+  },
+  {
+  "name": "DiziYou",
+  "internalName": "DiziYou",
+  "pluginClassName": "com.safakstream.diziyou.DiziYouPlugin",
+  "version": 1,
+  "url": "https://raw.githubusercontent.com/SafakStream/SafakStream/builds/DiziYou.cs3",
+  "fileHash": "sha256-363aa4b5fafd029d25a52b59ea3a16bbd7eab6ec59863dcd0bf4e356f551545a",
+  "fileSize": 16987,
+  "apiVersion": 1,
+  "repositoryUrl": "https://github.com/SafakStream/SafakStream",
+  "authors": [
+    "SafakStream"
+  ],
+  "status": 1,
+  "language": "tr",
+  "tvTypes": [
+    "TvSeries"
+  ],
+  "iconUrl": "https://raw.githubusercontent.com/SafakStream/SafakStream/builds/icons/diziyou.png",
+  "description": "SafakStream DiziYou Eklentisi"
+},
+  {
+  "name": "Dizilla",
+  "internalName": "Dizilla",
+  "pluginClassName": "com.safakstream.dizilla.DizillaPlugin",
+  "version": 1,
+  "url": "https://raw.githubusercontent.com/SafakStream/SafakStream/builds/Dizilla.cs3",
+  "fileHash": "sha256-e98140fa97700a0a98e096e3e5a8f8fac77b54046241af0df56878ffa70bcfc5",
+  "fileSize": 35877,
+  "apiVersion": 1,
+  "repositoryUrl": "https://github.com/SafakStream/SafakStream",
+  "authors": [
+    "SafakStream"
+  ],
+  "status": 1,
+  "language": "tr",
+  "tvTypes": [
+    "TvSeries"
+  ],
+  "iconUrl": "https://raw.githubusercontent.com/SafakStream/SafakStream/builds/icons/Dizilla.png",
+  "description": "Dizilla tüm yabancı dizileri ücretsiz olarak Türkçe Dublaj ve altyazılı seçenekleri ile 1080P kalite izleyebileceğiniz yeni nesil yabancı dizi izleme siteniz."
+},
+  {
+    "name": "HDFilmCehennemi",
+    "internalName": "HDFilmCehennemi",
+    "pluginClassName": "com.safakstream.hdfilmcehennemi.HDFilmCehennemiPlugin",
+    "version": 1,
+    "url": "https://raw.githubusercontent.com/SafakStream/SafakStream/builds/HDFilmCehennemi.cs3",
+    "fileHash": "sha256-4fd1ef50f4f54f795d9839201fcba08dc3dd31b15ab707158e2021952b668dc2",
+    "fileSize": 86512,
+    "status": 1,
+    "authors": [
+      "SafakStream"
+    ],
+    "description": "HDFilmCehennemi dizi, film ve anime sağlayıcısı.",
+    "repositoryUrl": "https://github.com/SafakStream/SafakStream",
+    "language": "tr",
+    "tvTypes": [
+      "Movie",
+      "TvSeries",
+      "Anime",
+      "Documentary"
+    ],
+    "iconUrl": "https://raw.githubusercontent.com/SafakStream/SafakStream/builds/icons/HDFilmCehennemi.jpeg",
+    "apiVersion": 1
+  },
+  {
+  "url": "https://raw.githubusercontent.com/SafakStream/SafakStream/builds/NetVGold.cs3",
+  "status": 1,
+  "version": 1,
+  "name": "NETV Gold",
+  "internalName": "NetVGold",
+  "authors": [
+    "SafakStream"
+  ],
+  "description": "NETV Gold canlı spor kanalları",
+  "fileSize": 169913,
+  "repositoryUrl": "https://github.com/SafakStream/SafakStream",
+  "language": "tr",
+  "tvTypes": [
+    "Live"
+  ],
+  "iconUrl": "https://raw.githubusercontent.com/SafakStream/SafakStream/builds/icons/NetVGold.png",
+  "apiVersion": 1,
+  "fileHash": "sha256-733ed4ad010c93a6f4fd5fed2fad0951b6a5fabe8db0007039e899f29554aef5"
+  }
+  ]
