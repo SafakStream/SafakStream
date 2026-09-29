@@ -192,5 +192,26 @@
   "language": "tr",
   "iconUrl": "https://raw.githubusercontent.com/SafakStream/SafakStream/builds/icons/WatchParty_icon.png",
   "repositoryUrl": "https://github.com/SafakStream/SafakStream"
+  },
+  {
+  "name": "YouTube",
+  "internalName": "YouTube",
+  "pluginClassName": "com.safakstream.youtube.YouTubePlugin",
+  "version": 1,
+  "url": "https://raw.githubusercontent.com/SafakStream/SafakStream/builds/YouTube.cs3",
+  "fileHash": "sha256-0e5d0d82dc877c944888bd90ce73fa5631ae1a12927434d22f7c9e969d0ae485",
+  "fileSize": 40630,
+  "status": 1,
+  "apiVersion": 1,
+  "tvTypes": [
+    "Others"
+  ],
+  "authors": [
+    "SafakStream"
+  ],
+  "description": "YouTube üzerindeki videolar, oynatma listeleri ve kanallar için SafakStream eklentisi.",
+  "language": "tr",
+  "iconUrl": "https://raw.githubusercontent.com/SafakStream/SafakStream/builds/icons/YouTube.png",
+  "repositoryUrl": "https://github.com/SafakStream/SafakStream"
   }
   ]
