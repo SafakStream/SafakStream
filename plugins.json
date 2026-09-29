@@ -220,8 +220,8 @@
   "pluginClassName": "com.safakstream.trgoals.TRGoalsPlugin",
   "version": 1,
   "url": "https://raw.githubusercontent.com/SafakStream/SafakStream/builds/TRGoals.cs3",
-  "fileHash": "sha256-fb47392ee543274c743a18682904caa7647a7baeb6c25ba24cbf09270f83925a",
-  "fileSize": 171786,
+  "fileHash": "sha256-2c362b0b8045a050b89e636eb46fd993b31b16b9eb23e43ed8ba55eedbe87281",
+  "fileSize": 171748,
   "status": 1,
   "apiVersion": 1,
   "tvTypes": [
