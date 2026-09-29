@@ -213,5 +213,26 @@
   "language": "tr",
   "iconUrl": "https://raw.githubusercontent.com/SafakStream/SafakStream/builds/icons/YouTube.png",
   "repositoryUrl": "https://github.com/SafakStream/SafakStream"
+  },
+  {
+  "name": "TRGoals",
+  "internalName": "TRGoals",
+  "pluginClassName": "com.safakstream.trgoals.TRGoalsPlugin",
+  "version": 1,
+  "url": "https://raw.githubusercontent.com/SafakStream/SafakStream/builds/TRGoals.cs3",
+  "fileHash": "sha256-fb47392ee543274c743a18682904caa7647a7baeb6c25ba24cbf09270f83925a",
+  "fileSize": 171786,
+  "status": 1,
+  "apiVersion": 1,
+  "tvTypes": [
+    "Live"
+  ],
+  "authors": [
+    "SafakStream"
+  ],
+  "description": "TRGoals dinamik canlı spor yayınları için SafakStream eklentisi.",
+  "language": "tr",
+  "iconUrl": "https://raw.githubusercontent.com/SafakStream/SafakStream/builds/icons/TRGoals.png",
+  "repositoryUrl": "https://github.com/SafakStream/SafakStream"
   }
   ]
