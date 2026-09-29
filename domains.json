@@ -1,14 +1,6 @@
 {
   "schemaVersion": 1,
   "sources": {
-    "dizipal": {
-      "gateways": [
-        "https://dizipal.site/"
-      ],
-      "candidates": [
-        "https://dizipal2133.com/"
-      ]
-    },
     "betmatiktv": {
       "candidates": [
         "https://betmatiktv155.com/"
