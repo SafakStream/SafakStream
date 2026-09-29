@@ -171,5 +171,26 @@
   "iconUrl": "https://raw.githubusercontent.com/SafakStream/SafakStream/builds/icons/NetVGold.png",
   "apiVersion": 1,
   "fileHash": "sha256-733ed4ad010c93a6f4fd5fed2fad0951b6a5fabe8db0007039e899f29554aef5"
+  },
+  {
+  "name": "WatchParty",
+  "internalName": "WatchParty",
+  "pluginClassName": "com.safakstream.watchparty.WatchPartyPlugin",
+  "version": 1,
+  "url": "https://raw.githubusercontent.com/SafakStream/SafakStream/builds/WatchParty.cs3",
+  "fileHash": "sha256-f5a90fde983b61b8595493a23129f1e82ae32a34a27949f241edddac5dfd4bd2",
+  "fileSize": 127968,
+  "status": 1,
+  "apiVersion": 1,
+  "tvTypes": [
+    "Others"
+  ],
+  "authors": [
+    "SafakStream"
+  ],
+  "description": "\u26a0\ufe0f BETA \u26a0\ufe0f Filmleri ve dizileri canl\u0131 sohbet ile ger\u00e7ek zamanl\u0131 olarak birlikte izleyin (5 kullan\u0131c\u0131ya kadar).",
+  "language": "tr",
+  "iconUrl": "https://raw.githubusercontent.com/SafakStream/SafakStream/builds/icons/WatchParty_icon.png",
+  "repositoryUrl": "https://github.com/KURSATSAFAK/SafakStream"
   }
   ]
