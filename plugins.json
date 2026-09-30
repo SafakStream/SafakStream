@@ -300,5 +300,26 @@
   ],
   "iconUrl": "https://raw.githubusercontent.com/SafakStream/SafakStream/builds/icons/SafakStreamTV.png",
   "apiVersion": 1
+  },
+  {
+  "name": "Streamed",
+  "internalName": "Streamed",
+  "pluginClassName": "com.safakstream.streamed.StreamedPlugin",
+  "version": 1,
+  "url": "https://raw.githubusercontent.com/SafakStream/SafakStream/builds/Streamed.cs3",
+  "fileHash": "sha256-85ae4da66e60e2c593c503734899ac2e47ceac539948ad56f5565beb5063972d",
+  "fileSize": 30824,
+  "status": 1,
+  "authors": [
+    "SafakStream"
+  ],
+  "description": "Uluslararası spor karşılaşmaları, anlık maç yayınları ve dinamik kaynak akışlarını sağlayan canlı yayın sağlayıcısı.",
+  "repositoryUrl": "https://github.com/SafakStream/SafakStream",
+  "language": "en",
+  "tvTypes": [
+    "Live"
+  ],
+  "iconUrl": "https://raw.githubusercontent.com/SafakStream/SafakStream/builds/icons/Streamed.png",
+  "apiVersion": 1
   }
   ]
