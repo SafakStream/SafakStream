@@ -321,5 +321,31 @@
   ],
   "iconUrl": "https://raw.githubusercontent.com/SafakStream/SafakStream/builds/icons/Streamed.png",
   "apiVersion": 1
+  },
+  {
+  "name": "StreamPlay",
+  "internalName": "StreamPlay",
+  "pluginClassName": "com.safakstream.streamplay.StreamPlayPlugin",
+  "version": 1,
+  "url": "https://raw.githubusercontent.com/SafakStream/SafakStream/builds/StreamPlay.cs3",
+  "fileHash": "sha256-6d26d46620341c4261a48679f6011fd18fd56663d7c7677239b2d4f28d4e9f46",
+  "fileSize": 1798198,
+  "status": 1,
+  "authors": [
+    "SafakStream"
+  ],
+  "description": "MultiAPI tabanlı çok kaynaklı film, dizi ve anime sağlayıcısı.",
+  "repositoryUrl": "https://github.com/SafakStream/SafakStream",
+  "language": "en",
+  "tvTypes": [
+    "AsianDrama",
+    "TvSeries",
+    "Anime",
+    "Movie",
+    "Cartoon",
+    "AnimeMovie"
+  ],
+  "iconUrl": "https://raw.githubusercontent.com/SafakStream/SafakStream/builds/icons/StreamPlay.png",
+  "apiVersion": 1
   }
   ]
