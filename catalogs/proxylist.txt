@@ -1,5 +1,0 @@
-{
-  "proxies": [
-    "https://safakstream-proxy-1.safakstream.workers.dev"
-  ]
-}
