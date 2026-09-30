@@ -307,8 +307,8 @@
   "pluginClassName": "com.safakstream.beyazelma.BeyazElmaPlugin",
   "version": 1,
   "url": "https://raw.githubusercontent.com/SafakStream/SafakStream/builds/BeyazElma.cs3",
-  "fileHash": "sha256-1a64012e8dd7a01bcb731c537d375da6ed1fbec2182c784a3515e43c3cf19eb0",
-  "fileSize": 159454,
+  "fileHash": "sha256-1000d1f963eab26074feb62fdf8f85cadbc04dc4a8be4786ecf8817604834086",
+  "fileSize": 159461,
   "status": 1,
   "authors": [
     "SafakStream"
