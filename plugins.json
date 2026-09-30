@@ -300,26 +300,5 @@
   ],
   "iconUrl": "https://raw.githubusercontent.com/SafakStream/SafakStream/builds/icons/SafakStreamTV.png",
   "apiVersion": 1
-  },
-  {
-  "name": "BeyazElma",
-  "internalName": "BeyazElma",
-  "pluginClassName": "com.safakstream.beyazelma.BeyazElmaPlugin",
-  "version": 1,
-  "url": "https://raw.githubusercontent.com/SafakStream/SafakStream/builds/BeyazElma.cs3",
-  "fileHash": "sha256-1000d1f963eab26074feb62fdf8f85cadbc04dc4a8be4786ecf8817604834086",
-  "fileSize": 159461,
-  "status": 1,
-  "authors": [
-    "SafakStream"
-  ],
-  "description": "Ulusal TV kanalları, kesintisiz canlı spor karşılaşmaları ve tematik yayınları bir arada sunan canlı yayın sağlayıcısı.",
-  "repositoryUrl": "https://github.com/SafakStream/SafakStream",
-  "language": "tr",
-  "tvTypes": [
-    "Live"
-  ],
-  "iconUrl": "https://raw.githubusercontent.com/SafakStream/SafakStream/builds/icons/BeyazElma.png",
-  "apiVersion": 1
   }
   ]
