@@ -284,8 +284,8 @@
   "pluginClassName": "com.safakstream.inatbox.InatBoxPlugin",
   "version": 1,
   "url": "https://raw.githubusercontent.com/SafakStream/SafakStream/builds/SafakStreamTV.cs3",
-  "fileHash": "sha256-2d7955737fde5b68ad59772b8b591dee3270bdc3947b5db3784c11f27feb6397",
-  "fileSize": 182645,
+  "fileHash": "sha256-0cea640bf5fe69e9551182e1f5cbb92f06021c6551d4994261a367dc88748df4",
+  "fileSize": 183266,
   "status": 1,
   "authors": [
     "SafakStream"
