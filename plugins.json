@@ -302,13 +302,13 @@
   "apiVersion": 1
   },
   {
-  "name": "Beyazelma",
-  "internalName": "Beyazelma",
+  "name": "BeyazElma",
+  "internalName": "BeyazElma",
   "pluginClassName": "com.safakstream.beyazelma.BeyazElmaPlugin",
   "version": 1,
   "url": "https://raw.githubusercontent.com/SafakStream/SafakStream/builds/BeyazElma.cs3",
-  "fileHash": "sha256-5c911afdb62db63274a644360bfa0b90adc8908eabe6dfb4047b0200b626d44c",
-  "fileSize": 159461,
+  "fileHash": "sha256-07387391c27be1169f22f6ae127d2ada29605945c4fc1efb131f85e2023093b1",
+  "fileSize": 159447,
   "status": 1,
   "authors": [
     "SafakStream"
