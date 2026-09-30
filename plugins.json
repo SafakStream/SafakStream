@@ -134,8 +134,8 @@
     "pluginClassName": "com.safakstream.hdfilmcehennemi.HDFilmCehennemiPlugin",
     "version": 1,
     "url": "https://raw.githubusercontent.com/SafakStream/SafakStream/builds/HDFilmCehennemi.cs3",
-    "fileHash": "sha256-4fd1ef50f4f54f795d9839201fcba08dc3dd31b15ab707158e2021952b668dc2",
-    "fileSize": 86512,
+    "fileHash": "sha256-0ca7de8f87ba7e1ec8079cc49f9e02551d9870897a5cd09cf2b8615406319e23",
+    "fileSize": 86458,
     "status": 1,
     "authors": [
       "SafakStream"
