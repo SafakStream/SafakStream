@@ -328,8 +328,8 @@
   "pluginClassName": "com.safakstream.selcukflix.SelcukFlixPlugin",
   "version": 1,
   "url": "https://raw.githubusercontent.com/SafakStream/SafakStream/builds/SelcukFlix.cs3",
-  "fileHash": "sha256-PLACEHOLDER",
-  "fileSize": 0,
+  "fileHash": "sha256-5d707f8883a191892bc421a4271ca3fe903dbae1c18c3979c1c362a7a8b0d303",
+  "fileSize": 33636,
   "status": 1,
   "authors": [
     "SafakStream"
