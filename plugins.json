@@ -284,8 +284,8 @@
   "pluginClassName": "com.safakstream.safakstreamtv.SafakStreamTVPlugin",
   "version": 1,
   "url": "https://raw.githubusercontent.com/SafakStream/SafakStream/builds/SafakStreamTV.cs3",
-  "fileHash": "sha256-e32918ad10183d7288c27a4d91b30ac1f42ed4f16e7e38090bbac2b75b67dcc8",
-  "fileSize": 215206,
+  "fileHash": "sha256-e695e64910fc5517d5c520ffa8e9f6d9f650ba843b542ccf194de3f225c01e29",
+  "fileSize": 215215,
   "status": 1,
   "authors": [
     "SafakStream"
