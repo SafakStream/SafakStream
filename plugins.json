@@ -321,5 +321,27 @@
   ],
   "iconUrl": "https://raw.githubusercontent.com/SafakStream/SafakStream/builds/icons/Streamed.png",
   "apiVersion": 1
+  },
+  {
+  "name": "SelcukFlix",
+  "internalName": "SelcukFlix",
+  "pluginClassName": "com.safakstream.selcukflix.SelcukFlixPlugin",
+  "version": 1,
+  "url": "https://raw.githubusercontent.com/SafakStream/SafakStream/builds/SelcukFlix.cs3",
+  "fileHash": "sha256-PLACEHOLDER",
+  "fileSize": 0,
+  "status": 1,
+  "authors": [
+    "SafakStream"
+  ],
+  "description": "SelcukFlix eklentisi.",
+  "repositoryUrl": "https://github.com/SafakStream/SafakStream",
+  "language": "tr",
+  "tvTypes": [
+    "Movie",
+    "TvSeries"
+  ],
+  "iconUrl": "https://raw.githubusercontent.com/SafakStream/SafakStream/builds/icons/SelcukFlix.png",
+  "apiVersion": 1
   }
   ]
