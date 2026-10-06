@@ -409,7 +409,7 @@
   ],
   "description": "SafakStream BeyazElma | Video ve Yayın Sağlayıcı Eklentisi",
   "iconUrl": "https://raw.githubusercontent.com/SafakStream/SafakStream/builds/icons/BeyazElma.png",
-  "url": "https://raw.githubusercontent.com/SafakStream/SafakStream/builds/BeyazElma.cs3?v=1",
+  "url": "https://raw.githubusercontent.com/SafakStream/SafakStream/builds/BeyazElma.cs3",
   "repositoryUrl": "https://github.com/SafakStream/SafakStream",
   "fileHash": "sha256-37a9f5751373f1e207d6fe1a040ed95f35b68cdb3a752efa05d62979ee1c8fa0",
   "fileSize": 9764
