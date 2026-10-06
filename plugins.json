@@ -346,10 +346,10 @@
   },
   {
   "iconUrl": "https://raw.githubusercontent.com/SafakStream/SafakStream/builds/icons/Sinewix.jpg",
-  "fileHash": "sha256-380e6c3aa04aae41b486c5aca3804ceb58d047f59f46b9f2f507e2a8a9e26200",
+  "fileHash": "sha256-d5152d1ab0e2fedfcb7059d5d57965b21aa30829da95c9ad5754d3bd0f50429c",
   "apiVersion": 1,
   "repositoryUrl": "https://github.com/SafakStream/SafakStream",
-  "fileSize": 26782,
+  "fileSize": 26756,
   "status": 1,
   "language": "tr",
   "authors": [
