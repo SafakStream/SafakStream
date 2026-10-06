@@ -391,5 +391,27 @@
   "repositoryUrl": "https://github.com/SafakStream/SafakStream",
   "fileHash": "sha256-98b125fe73561475c872950dc2e6454abb61559d7f387865b884ea8719a9a95d",
   "fileSize": 61049
+  },
+  {
+  "name": "BeyazElma",
+  "internalName": "BeyazElma",
+  "pluginClassName": "com.safakstream.beyazelma.BeyazElmaPlugin",
+  "version": 1,
+  "apiVersion": 1,
+  "requiresResources": false,
+  "status": 1,
+  "language": "tr",
+  "authors": [
+    "SafakStream"
+  ],
+  "tvTypes": [
+    "Others"
+  ],
+  "description": "SafakStream BeyazElma | Video ve Yayın Sağlayıcı Eklentisi",
+  "iconUrl": "https://raw.githubusercontent.com/SafakStream/SafakStream/builds/icons/BeyazElma.png",
+  "url": "https://raw.githubusercontent.com/SafakStream/SafakStream/builds/BeyazElma.cs3?v=1",
+  "repositoryUrl": "https://github.com/SafakStream/SafakStream",
+  "fileHash": "sha256-defe3614defda65db774f67db12569da8f2a7b76aa9883918b46438cb4cc85ca",
+  "fileSize": 9643
   }
   ]
