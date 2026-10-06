@@ -367,5 +367,29 @@
   "repositoryUrl": "https://github.com/SafakStream/SafakStream",
   "fileHash": "sha256-18c4eecdad0ccde6f27320002a2037b881e110408f7b51da15f2f3b2fb627067",
   "fileSize": 103606
-}
+},
+  {
+  "name": "StreamingCommunity",
+  "internalName": "StreamingCommunity",
+  "pluginClassName": "com.safakstream.streamingcommunity.StreamingCommunityPlugin",
+  "version": 1,
+  "apiVersion": 1,
+  "requiresResources": true,
+  "status": 1,
+  "language": "it",
+  "authors": [
+    "SafakStream"
+  ],
+  "tvTypes": [
+    "Movie",
+    "TvSeries",
+    "Anime"
+  ],
+  "description": "StreamingCommunity | Film e Serie TV in Streaming",
+  "iconUrl": "https://raw.githubusercontent.com/SafakStream/SafakStream/builds/icons/StreamingCommunity.png",
+  "url": "https://raw.githubusercontent.com/SafakStream/SafakStream/builds/StreamingCommunity.cs3",
+  "repositoryUrl": "https://github.com/SafakStream/SafakStream",
+  "fileHash": "sha256-3bf8492d07223a8beebec49a84146d6bf697902e44242214043bb5db04f74bf8",
+  "fileSize": 61060
+  }
   ]
