@@ -345,9 +345,9 @@
   "apiVersion": 1
   },
   {
-  "name": "Sinewix",
-  "internalName": "Sinewix",
-  "pluginClassName": "com.safakstream.sinewix.entry.SinewixEntry",
+  "name": "SafakStream Cinema",
+  "internalName": "SafakStreamCinema",
+  "pluginClassName": "com.safakstream.safakstreamcinema.entry.SafakStreamCinemaEntry",
   "version": 1,
   "apiVersion": 1,
   "requiresResources": false,
@@ -361,11 +361,11 @@
     "TvSeries",
     "Anime"
   ],
-  "description": "Sinewix | Ücretsiz Film - Dizi - Anime İzleme Uygulaması",
-  "iconUrl": "https://raw.githubusercontent.com/SafakStream/SafakStream/builds/icons/Sinewix.jpg",
-  "url": "https://raw.githubusercontent.com/SafakStream/SafakStream/builds/Sinewix.cs3",
+  "description": "SafakStream Cinema | Film, Dizi ve Anime İzleme Eklentisi",
+  "iconUrl": "https://raw.githubusercontent.com/SafakStream/SafakStream/builds/icons/SafakStreamCinema.png",
+  "url": "https://raw.githubusercontent.com/SafakStream/SafakStream/builds/SafakStreamCinema.cs3",
   "repositoryUrl": "https://github.com/SafakStream/SafakStream",
-  "fileHash": "sha256-a964a20a892d4139af5afa3f9adf72e8afbf3da436abc07280b03536fbc60582",
-  "fileSize": 103534
+  "fileHash": "sha256-18c4eecdad0ccde6f27320002a2037b881e110408f7b51da15f2f3b2fb627067",
+  "fileSize": 103606
 }
   ]
