@@ -279,29 +279,6 @@
     "apiVersion": 1
   },
   {
-  "name": "SafakStream TV",
-  "internalName": "SafakStreamTV",
-  "pluginClassName": "com.safakstream.safakstreamtv.SafakStreamTVPlugin",
-  "version": 1,
-  "url": "https://raw.githubusercontent.com/SafakStream/SafakStream/builds/SafakStreamTV.cs3",
-  "fileHash": "sha256-e695e64910fc5517d5c520ffa8e9f6d9f650ba843b542ccf194de3f225c01e29",
-  "fileSize": 215215,
-  "status": 1,
-  "authors": [
-    "SafakStream"
-  ],
-  "description": "Canlı spor müsabakaları, ulusal kanallar ve geniş yayın akışını bir arada sunan SafakStream TV yayın sağlayıcısı.",
-  "repositoryUrl": "https://github.com/SafakStream/SafakStream",
-  "language": "tr",
-  "tvTypes": [
-    "Movie",
-    "TvSeries",
-    "Live"
-  ],
-  "iconUrl": "https://raw.githubusercontent.com/SafakStream/SafakStream/builds/icons/SafakStreamTV.png",
-  "apiVersion": 1
-},
-  {
   "name": "Streamed",
   "internalName": "Streamed",
   "pluginClassName": "com.safakstream.streamed.StreamedPlugin",
@@ -415,5 +392,29 @@
   "repositoryUrl": "https://github.com/SafakStream/SafakStream",
   "fileHash": "sha256-33974c22f0383c47cd41ab612dc28b0e46bdfb942ea194f25bb27e8425543e6b",
   "fileSize": 22360
-  }
+  },
+  {
+  "name": "InatBox",
+  "internalName": "InatBox",
+  "pluginClassName": "com.safakstream.inatbox.InatBoxPlugin",
+  "version": 1,
+  "apiVersion": 1,
+  "requiresResources": false,
+  "status": 1,
+  "language": "tr",
+  "authors": [
+    "SafakStream"
+  ],
+  "tvTypes": [
+    "Movie",
+    "TvSeries",
+    "Live"
+  ],
+  "description": "SafakStream InatBox | Film, Dizi ve Canlı TV İçerik Sağlayıcısı",
+  "iconUrl": "https://raw.githubusercontent.com/SafakStream/SafakStream/builds/icons/InatBox.png",
+  "url": "https://raw.githubusercontent.com/SafakStream/SafakStream/builds/InatBox.cs3",
+  "repositoryUrl": "https://github.com/SafakStream/SafakStream",
+  "fileHash": "sha256-35794ccdc12d4b903c4a9860358acddd814620a5d517435353371457d2af237e",
+  "fileSize": 42186
+}
   ]
