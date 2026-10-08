@@ -345,30 +345,6 @@
   "apiVersion": 1
   },
   {
-  "name": "SafakStream Cinema",
-  "internalName": "SafakStreamCinema",
-  "pluginClassName": "com.safakstream.safakstreamcinema.entry.SafakStreamCinemaEntry",
-  "version": 1,
-  "apiVersion": 1,
-  "requiresResources": false,
-  "status": 1,
-  "language": "tr",
-  "authors": [
-    "SafakStream"
-  ],
-  "tvTypes": [
-    "Movie",
-    "TvSeries",
-    "Anime"
-  ],
-  "description": "SafakStream Cinema | Film, Dizi ve Anime İzleme Eklentisi",
-  "iconUrl": "https://raw.githubusercontent.com/SafakStream/SafakStream/builds/icons/SafakStreamCinema.png",
-  "url": "https://raw.githubusercontent.com/SafakStream/SafakStream/builds/SafakStreamCinema.cs3",
-  "repositoryUrl": "https://github.com/SafakStream/SafakStream",
-  "fileHash": "sha256-f7a51094bc737110cd575cda907154544e59f71aa73f99c719324a606c5bddf2",
-  "fileSize": 105698
-},
-  {
   "name": "StreamingCommunity",
   "internalName": "StreamingCommunity",
   "pluginClassName": "com.safakstream.streamingcommunity.StreamingCommunityPlugin",
